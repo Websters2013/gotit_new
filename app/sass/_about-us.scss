@@ -27,7 +27,7 @@
     &-thumb {
       display: block;
       height: 288px;
-      margin-bottom: -30px;
+      margin-bottom: -29px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -39,7 +39,10 @@
       padding: 0 35px;
 
       dt {
+        margin-bottom: 6px;
         font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 3px;
 
         span {
           display: block;
@@ -48,6 +51,8 @@
 
       dd {
         font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 4px;
       }
     }
   }
@@ -71,11 +76,11 @@
 
     &__item {
       width: 288px;
-      padding: 0 0 96px;
+      padding: 0 0 105px;
       margin: 0 0 -50px 0;
 
       &:first-child {
-        padding: 0 0 96px;
+        padding: 0 0 105px;
         margin: -50px 0 0;
       }
     }
@@ -85,11 +90,12 @@
 @media (min-width: $desktop) {
   .about-us {
     width: 1094px;
-    padding: 72px 0 170px;
+    padding: 51px 0 124px;
 
     &__wrap {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
     }
 
     &__column {
@@ -103,7 +109,12 @@
 
     &__item {
       width: 100%;
+      margin: 0;
+
+      &:first-child { margin: 0 }
     }
+
+    .btn_plus { margin-top: -26px }
   }
 }
 /*---------- /about-us ---------*/

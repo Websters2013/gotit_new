@@ -156,7 +156,8 @@
         //private properties
         var _obj = obj,
             _window = $( window ),
-            _footerLogoTop = $( '.site__footer-logo' );
+            _footer = $( '.site__footer' ),
+            _footerLogoTop = _footer.find( '.site__footer-logo' );
 
         //private methods
         var _addEvents = function() {
@@ -165,15 +166,15 @@
                     'scroll': function() {
                         var scrollTop = $(window).scrollTop();
 
-                        _move( scrollTop, scrollTop );
+                        _move( scrollTop );
 
-                        if ( ( _footerLogoTop.offset().top - scrollTop ) ) {
-
+                        if ( ( _footerLogoTop.offset().top - scrollTop ) < $(window).height() * 1.1 ) {
+                            _footer.addClass( 'is-inview' );
                         }
                     }
                 });
             },
-            _move = function( xPercent, yPercent ){
+            _move = function( scrollTop ){
 
                 $('.hero__title').each( function (i) {
                     var elem = $(this),
@@ -183,14 +184,14 @@
                     switch ( i ) {
                         case 0:
                             elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - xPercent * koefX ) + 'px, ' + ( yPercent * koefY * 1.5 ) + 'px )',
-                                'transform': 'translate( ' + ( - xPercent * koefX ) + 'px, ' + ( yPercent * koefY * 1.5 ) + 'px )'
+                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, ' + ( scrollTop * koefY * 1.5 ) + 'px )',
+                                'transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, ' + ( scrollTop * koefY * 1.5 ) + 'px )'
                             } );
                             break;
                         case 1:
                             elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - xPercent * koefX * 2 ) + 'px, ' + ( yPercent * koefY ) + 'px )',
-                                'transform': 'translate( ' + ( - xPercent * koefX * 2 ) + 'px, ' + ( yPercent * koefY ) + 'px )'
+                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, ' + ( scrollTop * koefY ) + 'px )',
+                                'transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, ' + ( scrollTop * koefY ) + 'px )'
                             } );
                             break;
                         default:
@@ -198,8 +199,8 @@
                     }
                 } );
                 $( '.hero__ban' ).css( {
-                    '-webkit-transform': 'translate( 0px, ' + ( yPercent * .1) + 'px )',
-                    'transform': 'translate( 0px, ' + ( yPercent * .1) + 'px )'
+                    '-webkit-transform': 'translate( 0px, ' + ( scrollTop * .1) + 'px )',
+                    'transform': 'translate( 0px, ' + ( scrollTop * .1) + 'px )'
                 } );
 
                 $('.about-us__column').each( function (i) {
@@ -210,14 +211,14 @@
                     switch ( i ) {
                         case 0:
                             elem.css( {
-                                '-webkit-transform': 'translate( 0px, ' + ( - ( yPercent - offsetElem ) * koefY ) + 'px )',
-                                'transform': 'translate( 0px, ' + ( - ( yPercent - offsetElem ) * koefY ) + 'px )'
+                                '-webkit-transform': 'translate( 0px, ' + ( - ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                                'transform': 'translate( 0px, ' + ( - ( scrollTop - offsetElem ) * koefY ) + 'px )'
                             } );
                             break;
                         case 1:
                             elem.css( {
-                                '-webkit-transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )',
-                                'transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )'
+                                '-webkit-transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                                'transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )'
                             } );
                             break;
                         default:
@@ -225,8 +226,8 @@
                     }
                 } );
                 $('.about-us .btn_plus').css( {
-                    '-webkit-transform': 'translate( 0px, ' + ( yPercent * .05 ) + 'px )',
-                    'transform': 'translate( 0px, ' + ( yPercent * .05 ) + 'px )'
+                    '-webkit-transform': 'translate( 0px, ' + ( scrollTop * .05 ) + 'px )',
+                    'transform': 'translate( 0px, ' + ( scrollTop * .05 ) + 'px )'
                 } );
 
                 $('.badge').each( function () {
@@ -235,8 +236,8 @@
                         koefY = .5;
 
                     elem.css( {
-                        '-webkit-transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )',
-                        'transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )'
+                        '-webkit-transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                        'transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )'
                     } );
                 } );
 
@@ -247,13 +248,13 @@
 
                     if ( i == 1 ) {
                         elem.css( {
-                            '-webkit-transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )',
-                            'transform': 'translate( 0px, ' + ( ( yPercent - offsetElem ) * koefY ) + 'px )'
+                            '-webkit-transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                            'transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )'
                         } );
                     } else {
                         elem.css( {
-                            '-webkit-transform': 'translate( 0px, ' + ( - ( yPercent - offsetElem ) * koefY ) + 'px )',
-                            'transform': 'translate( 0px, ' + ( - ( yPercent - offsetElem ) * koefY ) + 'px )'
+                            '-webkit-transform': 'translate( 0px, ' + ( - ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                            'transform': 'translate( 0px, ' + ( - ( scrollTop - offsetElem ) * koefY ) + 'px )'
                         } );
                     }
 

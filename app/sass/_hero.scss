@@ -1,23 +1,22 @@
 /*---------- hero ----------*/
 .hero {
   position: relative;
-  padding: 25vh 0;
+  padding: 52vh 0 2.5vh;
 
   &__title {
     position: absolute;
-    top: 7vh;
-    left: 30%;
+    top: 21vh;
+    left: 26%;
     overflow: hidden;
     white-space: nowrap;
     line-height: 1.1;
     letter-spacing: 0;
-    font-weight: 700;
 
     span {
       display: inline-block;
       padding: 3vh 0;
-      letter-spacing: -3px;
-      font-size: 25vh;
+      letter-spacing: 1vh;
+      font-size: 30vh;
       -webkit-transition: -webkit-transform 1.9s .3s cubic-bezier(0.84, -0.01, 0.48, 0.995);
       transition: transform 1.9s .3s cubic-bezier(0.84, -0.01, 0.48, 0.995);
 
@@ -27,8 +26,8 @@
     }
 
     &.on-top {
-      top: 40vh;
-      left: 60%;
+      top: 60vh;
+      left: 62%;
       z-index: 2;
     }
   }
@@ -65,9 +64,10 @@
     position: relative;
     width: 80%;
     max-width: 335px;
-    padding: 20px 30px 20px 20px;
+    padding: 30px 70px 30px 40px;
     margin: 0 auto;
     font-size: 11px;
+    letter-spacing: 4px;
     line-height: 13px;
     transform: translate(-120%, 0);
     border: 1px solid #000;
@@ -93,7 +93,7 @@
     &:after {
       position: absolute;
       top: calc(50% - 4px);
-      right: 15px;
+      right: 50px;
       width: 0;
       height: 0;
       border-style: solid;
@@ -125,8 +125,10 @@
 
       span {
         display: block;
+        margin-bottom: 6px;
         font-size: 24px;
         line-height: 28px;
+        letter-spacing: 1px;
         text-transform: none;
       }
     }
@@ -161,7 +163,8 @@
 
     &__ban {
       height: auto;
-      width: 80%;
+      width: 81.2%;
+      margin-bottom: 0;
 
       img {
         position: relative;
@@ -173,8 +176,8 @@
 
     &__services {
       position: absolute;
-      top: 45vh;
-      left: 20%;
+      top: 78.5vh;
+      left: 12.3%;
       z-index: 3;
       border: none;
       transform: translate(-100vw, 0%);
