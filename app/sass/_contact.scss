@@ -1,0 +1,58 @@
+/*---------- contact ----------*/
+.contact {
+  position: relative;
+  padding: 40px;
+
+  &__title {
+    display: block;
+    position: relative;
+    margin-bottom: 24px;
+    padding-bottom: 95px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+
+    &:after {
+      @include absoluteCenterX();
+      bottom: 0;
+      width: 1px;
+      height: 66px;
+      background-color: #000;
+      content: '';
+    }
+  }
+
+  &__map {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 77.322835%;
+    margin: 0 auto;
+    background-image: url(../img/contact-map.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+  }
+}
+
+@media (min-width: $tablet-portrait) {
+  .contact {
+
+    &__map {
+      width: 635px;
+      height: 491px;
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .contact {
+
+    &__map {
+
+    }
+  }
+}
+/*---------- /contact ---------*/

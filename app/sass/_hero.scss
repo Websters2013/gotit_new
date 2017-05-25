@@ -1,0 +1,188 @@
+/*---------- hero ----------*/
+.hero {
+  position: relative;
+  padding: 25vh 0;
+
+  &__title {
+    position: absolute;
+    top: 7vh;
+    left: 30%;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.1;
+    letter-spacing: 0;
+    font-weight: 700;
+
+    span {
+      display: inline-block;
+      padding: 3vh 0;
+      letter-spacing: -3px;
+      font-size: 25vh;
+      -webkit-transition: -webkit-transform 1.9s .3s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+      transition: transform 1.9s .3s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+
+      &:nth-child(2n) { transform: translate(0, 100%) }
+
+      &:nth-child(2n-1) { transform: translate(0, -100%) }
+    }
+
+    &.on-top {
+      top: 40vh;
+      left: 60%;
+      z-index: 2;
+    }
+  }
+
+  &__ban {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    height: 60vh;
+    min-height: 300px;
+    margin: 0 40px 40px 0;
+    z-index: 1;
+    background: #fff;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      max-height: 100%;
+      transform: translate(-100%, -50%);
+      -webkit-transition: -webkit-transform 0.9s 0s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+      transition: -webkit-transform 0.9s 0s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+      transition: transform 0.9s 0s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+      transition: transform 0.9s 0s cubic-bezier(0.84, -0.01, 0.48, 0.995), -webkit-transform 0.9s 0s cubic-bezier(0.84, -0.01, 0.48, 0.995);
+    }
+  }
+
+  &__services {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    max-width: 335px;
+    padding: 20px 30px 20px 20px;
+    margin: 0 auto;
+    font-size: 11px;
+    line-height: 13px;
+    transform: translate(-120%, 0);
+    border: 1px solid #000;
+    text-transform: uppercase;
+    -webkit-transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.9s 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.9s 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      content: '';
+      transform-origin: right center;
+      transform: scale(0, 1);
+      background: #000000;
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:after {
+      position: absolute;
+      top: calc(50% - 4px);
+      right: 15px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 8px;
+      border-color: transparent transparent transparent #000000;
+      -webkit-transition: border 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      content: '';
+    }
+
+    &:hover {
+      color: #ffffff;
+
+      &:before {
+        transform: scale(1, 1);
+        transform-origin: left center;
+      }
+
+      &:after {
+        transform: translate(6px, 0);
+        border-color: transparent transparent transparent #fff;
+      }
+    }
+
+    &-wrap {
+      display: block;
+      position: relative;
+      z-index: 1;
+
+      span {
+        display: block;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: none;
+      }
+    }
+  }
+
+  &.is-inview {
+
+    .hero__title {
+
+      span {
+
+        &:nth-child(2n),
+        &:nth-child(2n-1) { transform: translate(0, 0%) }
+      }
+    }
+
+    .hero__services {
+      transform: translate(0, 0);
+    }
+
+    .hero__ban {
+
+      img {
+        transform: translate(0%, -50%);
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .hero {
+
+    &__ban {
+      height: auto;
+      width: 80%;
+
+      img {
+        position: relative;
+        top: 0;
+        width: 100%;
+        transform: translate(-100%, 0%);
+      }
+    }
+
+    &__services {
+      position: absolute;
+      top: 45vh;
+      left: 20%;
+      z-index: 3;
+      border: none;
+      transform: translate(-100vw, 0%);
+    }
+
+    &.is-inview .hero__ban img {
+      transform: translate(0%, 0%);
+    }
+  }
+}
+/*---------- /hero ---------*/
