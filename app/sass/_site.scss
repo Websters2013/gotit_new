@@ -52,20 +52,25 @@
       margin: 0;
       font-weight: 500;
       letter-spacing: 2px;
+      font-size: 10px;
+      text-align: center;
     }
 
     &-logo {
       position: relative;
-      margin-bottom: 40px;
+      max-width: 1022px;
+      margin: 0 auto 40px;
       text-align: center;
-      font-size: 1.29rem;
+      font-size: 18px;
       text-transform: uppercase;
-      letter-spacing: .71rem;
-      line-height: 1.79rem;
+      letter-spacing: 10px;
+      line-height: 20px;
 
       span {
         display: block;
-        font-size: 2.14rem;
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: 10px;
       }
 
       &:before,
@@ -130,7 +135,7 @@
     }
 
     &__footer {
-      padding: 0 40px 100px 40px;
+      padding: 0 40px 47px 40px;
 
       &-logo {
 

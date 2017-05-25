@@ -4,10 +4,11 @@
 
         $( window ).on( {
             'load': function () {
+                $('html, body').animate({scrollTop: 0},1);
                 setTimeout( function () {
                     $('.loading').removeClass('active');
                     $('.hero').addClass('is-inview');
-                }, 2000 )
+                }, 1 )
             }
         } );
 
@@ -170,6 +171,8 @@
 
                         if ( ( _footerLogoTop.offset().top - scrollTop ) < $(window).height() * 1.1 ) {
                             _footer.addClass( 'is-inview' );
+                        } else {
+                            _footer.removeClass( 'is-inview' );
                         }
                     }
                 });

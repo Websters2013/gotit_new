@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   margin: 0 auto 54px;
-  max-width: 600px;
+  max-width: 625px;
 
   input {
     width: 100%;
@@ -30,14 +30,30 @@
 
 @media (min-width: $tablet-landscape) {
   .newsletter {
-    margin-bottom: 3.375rem;
+    margin-bottom: 57px;
 
     input {
-      height: 3.125rem;
+      height: 57px;
     }
 
     .btn {
-      height: 3.125rem;
+      height: 57px;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .newsletter {
+    display: flex;
+    margin-bottom: 87px;
+
+    > * {
+      width: 50%;
+    }
+
+    input {
+      border: 1px solid #000000;
+      border-right: 0;
     }
   }
 }
