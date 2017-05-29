@@ -23,6 +23,12 @@
     transform-origin: left center;
     transform: scale(1, 1);
   }
+  &_bold {
+
+    &:before {
+      height: 2px;
+    }
+  }
 }
 
 @media (min-width: $tablet-landscape) {

@@ -76,9 +76,9 @@
         var _self = this,
             _obj = obj,
             _slider = _obj.find( '.swiper-container' ),
-            _sliderPagination = _slider.find( '.swiper-pagination' ),
-            _sliderNext = _slider.find( '.swiper-button-next' ),
-            _sliderPrev = _slider.find( '.swiper-button-prev' ),
+            _sliderPagination = _obj.find( '.swiper-pagination' ),
+            _sliderNext = _obj.find( '.swiper-button-next' ),
+            _sliderPrev = _obj.find( '.swiper-button-prev' ),
             _swiper;
 
         //private methods

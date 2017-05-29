@@ -2,6 +2,7 @@
 .contact {
   position: relative;
   padding: 40px;
+  margin-bottom: 68px;
 
   &__title {
     display: block;
@@ -10,7 +11,10 @@
     padding-bottom: 95px;
     font-size: 12px;
     text-transform: uppercase;
-    color: #000;
+    @include main-font2();
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: $main-black-color;
     text-align: center;
 
     &:after {
@@ -18,31 +22,70 @@
       bottom: 0;
       width: 1px;
       height: 66px;
-      background-color: #000;
+      background-color: $main-black-color;
       content: '';
     }
   }
 
-  &__map {
+  &__wrap {
     display: block;
     position: relative;
     width: 100%;
-    padding: 77.322835%;
+    height: 77.322835vw;
     margin: 0 auto;
-    background-image: url(../img/contact-map.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: #fff;
+  }
+  &__map,
+  &__map-location {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__map {
+    pointer-events: none;
+  }
+  &__map-location-item {
+    position: absolute;
+    display: inline-block;
+    font-size: 28px;
+    @include main-font2();
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:nth-child(1) {
+      top: 21%;
+      left: -4.8%;
+    }
+    &:nth-child(2) {
+      top: 54.2%;
+      right: -4.8%;
+    }
+
   }
 }
 
 @media (min-width: $tablet-portrait) {
   .contact {
+    margin-bottom: 143px;
 
-    &__map {
-      width: 635px;
-      height: 491px;
+    &__wrap {
+      width: 615px;
+      height: 471px;
       padding: 0;
+    }
+    &__map-location-item {
+      font-size: 48px;
+
+      &:nth-child(1) {
+        top: 26%;
+        left: -4.8%;
+      }
+      &:nth-child(2) {
+        top: 57.2%;
+        right: -4.8%;
+      }
     }
   }
 }
