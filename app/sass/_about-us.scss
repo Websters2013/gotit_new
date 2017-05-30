@@ -5,6 +5,46 @@
   text-align: center;
   z-index: 1;
 
+  &__letters {
+    font-size: 144px;
+    font-weight: bold;
+    letter-spacing: 7.6px;
+    color: #000000;
+    text-transform: uppercase;
+
+    div {
+      position: absolute;
+      width: 106px;
+      height: 169px;
+      z-index: 1;
+
+      &:nth-child(1) {
+        top: 26vh;
+        left: 44%;
+      }
+
+      &:nth-child(2) {
+        top: 50vh;
+        left: 30%;
+      }
+
+      &:nth-child(3) {
+        top: 120vh;
+        left: 70%;
+      }
+
+      &:nth-child(4) {
+        top: 130vh;
+        left: 20%;
+      }
+
+      &:nth-child(5) {
+        top: 150vh;
+        left: 40%;
+      }
+    }
+  }
+
   &__title {
     position: absolute;
     top: 60px;
