@@ -55,6 +55,7 @@
 
                     curItem.addClass( 'opened' );
                     _menu.addClass( 'opened' );
+                    $( '.search, .search-btn' ).removeClass( 'opened' );
 
                     _scroller.css( {
                         'overflow': 'hidden'
