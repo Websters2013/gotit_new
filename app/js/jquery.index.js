@@ -187,14 +187,14 @@
                     switch ( i ) {
                         case 0:
                             elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, ' + ( scrollTop * koefY * 1.5 ) + 'px )',
-                                'transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, ' + ( scrollTop * koefY * 1.5 ) + 'px )'
+                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, 0px )',
+                                'transform': 'translate( ' + ( - scrollTop * koefX ) + 'px, 0px )'
                             } );
                             break;
                         case 1:
                             elem.css( {
-                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, ' + ( scrollTop * koefY ) + 'px )',
-                                'transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, ' + ( scrollTop * koefY ) + 'px )'
+                                '-webkit-transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, 0px )',
+                                'transform': 'translate( ' + ( - scrollTop * koefX * 2 ) + 'px, 0px )'
                             } );
                             break;
                         default:
