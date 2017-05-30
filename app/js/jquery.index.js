@@ -8,9 +8,30 @@
                 setTimeout( function () {
                     $('.loading').removeClass('active');
                     $('.hero').addClass('is-inview');
+                    $('.about-us').addClass('is-inview');
                 }, 1 )
             }
         } );
+
+        var $window = $(window);
+        var scrollTime = 1.2;
+        var scrollDistance = 170;
+
+        $window.on("mousewheel DOMMouseScroll", function(event){
+
+            event.preventDefault();
+
+            var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+            var scrollTop = $window.scrollTop();
+            var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+            TweenMax.to($window, scrollTime, {
+                scrollTo : { y: finalScroll, autoKill:true },
+                ease: Power1.easeOut,
+                overwrite: 5
+            });
+
+        });
 
         $('.hero').each( function() {
             new Hero( $(this) );
@@ -237,6 +258,11 @@
                     'transform': 'translate( 0px, ' + ( scrollTop * .05 ) + 'px )'
                 } );
 
+                $('.about-us__image').css( {
+                    '-webkit-transform': 'translate( 0px, ' + ( scrollTop * 0.1 ) + 'px )',
+                    'transform': 'translate( 0px, ' + ( scrollTop * 0.1 ) + 'px )'
+                } );
+
                 $('.badge').each( function () {
                     var elem = $(this),
                         offsetElem = elem.offset().top,
@@ -325,6 +351,7 @@
                     curItem.addClass( 'opened' );
                     _obj.addClass( 'opened' );
                     _showBtn.addClass( 'opened' );
+                    $( '.site__menu, .site__menu-btn' ).removeClass( 'opened' );
                     // $('.hero').removeClass('is-inview');
 
                     _scroller.css( {
