@@ -338,9 +338,9 @@
                     _showBtn.removeClass( 'opened' );
                     // $('.hero').addClass('is-inview');
 
-                    _scroller.css( {
-                        'overflow': 'visible'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'visible'
+                    // } );
 
                     _header.css({
                         'z-index': 2
@@ -354,9 +354,9 @@
                     $( '.site__menu, .site__menu-btn' ).removeClass( 'opened' );
                     // $('.hero').removeClass('is-inview');
 
-                    _scroller.css( {
-                        'overflow': 'hidden'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'hidden'
+                    // } );
 
                     _header.css({
                         'z-index': 15
