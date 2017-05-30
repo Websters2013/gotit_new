@@ -133,8 +133,8 @@
                     var curItem = $(this),
                         topPos = _obj.offset().top;
 
-                    if( ( _window.scrollTop() + windowH*0.9 ) > topPos && !curItem.hasClass( 'animation' ) ){
-
+                    if( ( _window.scrollTop() + windowH*0.7 ) > topPos && !curItem.hasClass( 'animation' ) ){
+                        console.log(100);
                         curItem.addClass( 'animation' );
                     }
                 })
