@@ -86,6 +86,9 @@
     .navigation-controls {
       right: 15px;
     }
+    &__hero {
+      min-height: 700px;
+    }
     &__hero-wrap {
       max-width: 50%;
 
@@ -96,7 +99,7 @@
     &__item {
       position: relative;
       max-width: 1140px;
-      margin: 0 auto 235px;
+      margin: 0 auto 240px;
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
