@@ -43,9 +43,9 @@
                     curItem.removeClass( 'opened' );
                     _menu.removeClass( 'opened' );
 
-                    _scroller.css( {
-                        'overflow': 'visible'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'visible'
+                    // } );
 
                     _obj.css({
                         'z-index': 2
@@ -57,9 +57,9 @@
                     _menu.addClass( 'opened' );
                     $( '.search, .search-btn' ).removeClass( 'opened' );
 
-                    _scroller.css( {
-                        'overflow': 'hidden'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'hidden'
+                    // } );
 
                     _obj.css({
                         'z-index': 15
