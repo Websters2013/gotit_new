@@ -24,6 +24,16 @@ var paths = {
                 'app/js/jquery.index.js',
                 'app/js/jquery.map.js'
             ]
+        },
+        {
+            dist: 'our-services.min.js',
+            contains: [
+                'app/js/jquery.index.js',
+                'app/js/jquery.main.js',
+                'app/js/jquery.scroll-to.js',
+                'app/js/jquery.paralax.js'
+
+            ]
         }
     ],
     vendorScripts: 'app/js/vendors/**/*.js',
