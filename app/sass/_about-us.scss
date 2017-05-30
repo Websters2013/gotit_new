@@ -5,15 +5,45 @@
   text-align: center;
   z-index: 1;
 
-  &__border {
-    //position: absolute;
-    //top: 15vh;
+  &__title {
+    position: absolute;
+    top: 60px;
+    left: calc(55% + 20px);
+    right: 20px;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.5px;
+    color: #000;
+    text-align: left;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__content {
     position: relative;
-    left: 30%;
+    padding: 50px 20px;
+    z-index: 1;
+    text-align: left;
+    @include main-font2();
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.42;
+    }
+  }
+
+  &__border {
+    overflow: hidden;
+    position: relative;
+    left: 25%;
     width: 30%;
     height: 50vh;
     min-height: 250px;
-    overflow: hidden;
+    min-width: 100px;
     z-index: -1;
     background: #fff;
 
@@ -129,10 +159,12 @@
   }
 
   &__image {
+    overflow: hidden;
     position: absolute;
     top: 25vh;
     left: 40%;
     width: 30%;
+    min-width: 100px;
 
     img {
       display: block;
@@ -163,13 +195,14 @@
 
     &-name {
       display: block;
-      padding: 0 35px;
+      padding: 0 15px 0 35px;
 
       dt {
         margin-bottom: 6px;
         font-size: 24px;
-        line-height: 30px;
-        letter-spacing: 3px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 5px;
 
         span {
           display: block;
@@ -177,9 +210,11 @@
       }
 
       dd {
+        font-weight: 600;
+        line-height: 1.88;
+        letter-spacing: 5px;
+        color: #000000;
         font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 4px;
       }
     }
   }
@@ -187,6 +222,15 @@
   .badge {
     top: 0;
     left: 39.76234%;
+  }
+}
+
+@media (min-width: $tablet-landscape) {
+  .about-us {
+
+    &__image {
+
+    }
   }
 }
 
@@ -233,7 +277,19 @@
     width: 1094px;
     padding: 51px 0 124px;
 
+    &.about-us_detail {
+      padding: 182px 0 124px;
+    }
+
+    &__title {
+      top: 235px;
+      left: calc(19.2% + 424px + 33px);
+      font-size: 48px;
+      line-height: 1.4em;
+    }
+
     &__border {
+      left: 19.2%;
       width: 424px;
       height: 814px;
 
@@ -248,6 +304,7 @@
         }
       }
     }
+
     &__wrap {
       flex-direction: row;
       justify-content: space-between;
@@ -255,8 +312,24 @@
     }
 
     &__image {
+      top: 428px;
+      left: 31%;
       width: 418px;
       height: 691px;
+    }
+
+    &__content {
+      width: 1150px;
+      margin: 0 auto;
+      padding: 374px 0 161px calc(46.5%);
+      font-size: 16px;
+      line-height: 1.38;
+      letter-spacing: 1px;
+      color: #000000;
+
+      p {
+        margin-bottom: 44px;
+      }
     }
 
     &__column {

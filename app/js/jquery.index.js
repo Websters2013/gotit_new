@@ -311,6 +311,7 @@
             _obj = obj,
             _header = $( '.site__header' ),
             _scroller = $( 'body, html' ),
+            _searchField = _obj.find( 'input' ),
             _showBtn = $( '.search-btn' );
 
         //private methods
@@ -324,6 +325,9 @@
                     click: function() {
 
                         _openSeach( $( this ) );
+                        setTimeout( function () {
+                            _searchField.focus();
+                        }, 300 )
                     }
                 } );
             },
@@ -338,9 +342,9 @@
                     _showBtn.removeClass( 'opened' );
                     // $('.hero').addClass('is-inview');
 
-                    _scroller.css( {
-                        'overflow': 'visible'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'visible'
+                    // } );
 
                     _header.css({
                         'z-index': 2
@@ -354,9 +358,9 @@
                     $( '.site__menu, .site__menu-btn' ).removeClass( 'opened' );
                     // $('.hero').removeClass('is-inview');
 
-                    _scroller.css( {
-                        'overflow': 'hidden'
-                    } );
+                    // _scroller.css( {
+                    //     'overflow': 'hidden'
+                    // } );
 
                     _header.css({
                         'z-index': 15
