@@ -65,9 +65,9 @@
       font-size: 18px;
       @include main-font2();
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: 10px;
       line-height: 20px;
+      text-transform: none;
 
       span {
         display: block;
