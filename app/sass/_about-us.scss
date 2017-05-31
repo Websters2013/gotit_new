@@ -14,8 +14,7 @@
 
     div {
       position: absolute;
-      width: 106px;
-      height: 169px;
+      padding: 10px 0;
       z-index: 1;
 
       &:nth-child(1) {
@@ -318,11 +317,46 @@
     padding: 51px 0 124px;
 
     &.about-us_detail {
-      padding: 182px 0 124px;
+      padding: 153px 0 124px;
+    }
+
+    &__letters {
+      font-size: 144px;
+      letter-spacing: 7.6px;
+
+      div {
+        width: 106px;
+        height: 169px;
+
+        &:nth-child(1) {
+          top: 241px;
+          left: 44%;
+        }
+
+        &:nth-child(2) {
+          top: 515px;
+          left: 25.5%;
+        }
+
+        &:nth-child(3) {
+          top: 928px;
+          left: 67%;
+        }
+
+        &:nth-child(4) {
+          top: 1105px;
+          left: 3%;
+        }
+
+        &:nth-child(5) {
+          top: 1427px;
+          left: 19%;
+        }
+      }
     }
 
     &__title {
-      top: 235px;
+      top: 206px;
       left: calc(19.2% + 424px + 33px);
       font-size: 48px;
       line-height: 1.4em;
@@ -352,7 +386,7 @@
     }
 
     &__image {
-      top: 428px;
+      top: 399px;
       left: 31%;
       width: 418px;
       height: 691px;
@@ -361,7 +395,7 @@
     &__content {
       width: 1150px;
       margin: 0 auto;
-      padding: 374px 0 161px calc(46.5%);
+      padding: 378px 0 161px calc(46.5%);
       font-size: 16px;
       line-height: 1.38;
       letter-spacing: 1px;
