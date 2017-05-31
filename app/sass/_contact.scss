@@ -57,12 +57,31 @@
     &:nth-child(1) {
       top: 21%;
       left: -4.8%;
+
+      address {
+        text-align: left;
+      }
     }
     &:nth-child(2) {
       top: 54.2%;
       right: -4.8%;
-    }
 
+      address {
+        text-align: right;
+      }
+    }
+    address {
+      padding: 14px 0 0;
+      font-size: 16px;
+      @include main-font2();
+      font-weight: 600;
+      letter-spacing: 5px;
+
+      span {
+        display: block;
+        margin-bottom: 3px;
+      }
+    }
   }
 }
 
@@ -76,15 +95,15 @@
       padding: 0;
     }
     &__map-location-item {
-      font-size: 48px;
+      font-size: 64px;
 
       &:nth-child(1) {
-        top: 26%;
-        left: -4.8%;
+        top: 20.2%;
+        left: -5.3%;
       }
       &:nth-child(2) {
-        top: 57.2%;
-        right: -4.8%;
+        top: 55.2%;
+        right: -9.8%;
       }
     }
   }

@@ -32,7 +32,15 @@ var paths = {
                 'app/js/jquery.main.js',
                 'app/js/jquery.scroll-to.js',
                 'app/js/jquery.paralax.js'
-
+            ]
+        },
+        {
+            dist: 'contact-us.min.js',
+            contains: [
+                'app/js/jquery.index.js',
+                'app/js/jquery.main.js',
+                'app/js/jquery.paralax.js',
+                'app/js/jquery.map.js'
             ]
         }
     ],
