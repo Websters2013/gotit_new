@@ -13,25 +13,26 @@
             }
         } );
 
-        var $window = $(window);
-        var scrollTime = 1.2;
-        var scrollDistance = 170;
-
-        $window.on("mousewheel DOMMouseScroll", function(event){
-
-            event.preventDefault();
-
-            var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-            var scrollTop = $window.scrollTop();
-            var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-
-            TweenMax.to($window, scrollTime, {
-                scrollTo : { y: finalScroll, autoKill:true },
-                ease: Power1.easeOut,
-                overwrite: 5
-            });
-
-        });
+        // var $window = $(window),
+        //     scrollTime = 1.2,
+        //     scrollDistance = 170;
+        //
+        // $window.on("mousewheel DOMMouseScroll", function(event){
+        //
+        //     if ( canUseSmoothScroll ) {
+        //         event.preventDefault();
+        //
+        //         var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3,
+        //             scrollTop = $window.scrollTop(),
+        //             finalScroll = scrollTop - parseInt( delta * scrollDistance );
+        //
+        //         TweenMax.to( $window, scrollTime, {
+        //             scrollTo : { y: finalScroll, autoKill:true },
+        //             ease: Power1.easeOut,
+        //             overwrite: 5
+        //         });
+        //     }
+        // });
 
         $('.hero').each( function() {
             new Hero( $(this) );
@@ -187,10 +188,12 @@
     var Site = function(obj) {
 
         //private properties
-        var _obj = obj,
+        var _self = this,
+            _obj = obj,
             _window = $( window ),
             _footer = $( '.site__footer' ),
-            _footerLogoTop = _footer.find( '.site__footer-logo' );
+            _footerLogoTop = _footer.find( '.site__footer-logo' ),
+            _canUseSmoothScroll = true;
 
         //private methods
         var _addEvents = function() {
@@ -208,6 +211,24 @@
                         }
                     }
                 });
+
+                _window.on({
+                    'mousewheel': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+                        }
+                    },
+                    'DOMMouseScroll': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+                        }
+                    }
+                });
+
             },
             _move = function( scrollTop ){
 
@@ -312,13 +333,31 @@
                     } );
                 } );
             },
+            _siteScroll = function( event ) {
+                var scrollTime = 1.2,
+                    scrollDistance = 170,
+                    delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3,
+                    scrollTop = _window.scrollTop(),
+                    finalScroll = scrollTop - parseInt( delta * scrollDistance );
+
+                TweenMax.to( _window, scrollTime, {
+                    scrollTo : { y: finalScroll, autoKill:true },
+                    ease: Power1.easeOut,
+                    overwrite: 5
+                });
+            },
             _init = function() {
+                _obj[ 0 ].obj = _self;
                 _addEvents();
             };
 
         //public properties
 
         //public methods
+        _self.setCanUseScroll = function ( param ) {
+
+            _canUseSmoothScroll = param;
+        };
 
         _init();
     };
@@ -328,6 +367,7 @@
         //private properties
         var _self = this,
             _obj = obj,
+            _html = $( 'html' ),
             _header = $( '.site__header' ),
             _scroller = $( 'body, html' ),
             _searchField = _obj.find( 'input' ),
@@ -361,6 +401,12 @@
                     curItem.removeClass( 'opened' );
                     _obj.removeClass( 'opened' );
 
+                    _html.css({
+                        'overflow-y': 'auto'
+                    });
+
+                    $( '.site' )[0].obj.setCanUseScroll( true );
+
                     _header.css({
                         'z-index': 2
                     });
@@ -370,6 +416,12 @@
                     curItem.addClass( 'opened' );
                     _obj.addClass( 'opened' );
                     $( '.site__menu, .site__menu-btn, .get-in-touch' ).removeClass( 'opened' );
+
+                    _html.css({
+                        'overflow-y': 'hidden'
+                    });
+
+                    $( '.site' )[0].obj.setCanUseScroll( false );
 
                     _header.css({
                         'z-index': 15
@@ -385,6 +437,7 @@
         //private properties
         var _self = this,
             _obj = obj,
+            _html = $( 'html' ),
             _header = $( '.site__header' ),
             _textarea = _obj.find( 'textarea' ),
             _submit = _obj.find( '.get-in-touch__submit' ),
@@ -418,8 +471,6 @@
                         if ( elemValue == '' ) {
                             _submit.removeClass( 'show' );
                         }
-
-                        console.log(elemValue);
                     }
                 } );
 
@@ -437,6 +488,12 @@
 
                 _obj.removeClass( 'opened' );
 
+                _html.css({
+                    'overflow-y': 'auto'
+                });
+
+                $( '.site' )[0].obj.setCanUseScroll( true );
+
                 _header.css({
                     'z-index': 2
                 });
@@ -445,6 +502,12 @@
 
                 _obj.addClass( 'opened' );
                 $( '.search-btn' ).addClass( 'get-in-touch-opened' );
+
+                _html.css({
+                    'overflow-y': 'hidden'
+                });
+
+                $( '.site' )[0].obj.setCanUseScroll( false );
 
                 _header.css({
                     'z-index': 15

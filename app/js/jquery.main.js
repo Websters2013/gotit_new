@@ -16,7 +16,7 @@
         var _self = this,
             _obj = obj,
             _menu = _obj.find( '.site__menu' ),
-            _scroller = $( 'body, html' ),
+            _scroller = $( 'html' ),
             _showBtn = $( '.site__menu-btn' );
 
         //private methods
@@ -42,9 +42,11 @@
                     curItem.removeClass( 'opened' );
                     _menu.removeClass( 'opened' );
 
-                    // _scroller.css( {
-                    //     'overflow': 'visible'
-                    // } );
+                    _scroller.css( {
+                        'overflow-y': 'auto'
+                    } );
+
+                    $( '.site' )[0].obj.setCanUseScroll( true );
 
                     _obj.css({
                         'z-index': 2
@@ -57,9 +59,11 @@
                     $( '.search, .search-btn, .get-in-touch' ).removeClass( 'opened' );
                     $( '.get-in-touch-opened' ).removeClass( 'get-in-touch-opened' );
 
-                    // _scroller.css( {
-                    //     'overflow': 'hidden'
-                    // } );
+                    _scroller.css( {
+                        'overflow-y': 'hidden'
+                    } );
+
+                    $( '.site' )[0].obj.setCanUseScroll( false );
 
                     _obj.css({
                         'z-index': 15
