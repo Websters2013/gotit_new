@@ -125,6 +125,7 @@
   text-transform: uppercase;
   @include main-font2();
   pointer-events: auto;
+  transform: translateZ(0);
 
   &:before,
   &:after {
