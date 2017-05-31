@@ -253,6 +253,7 @@
                             break;
                     }
                 } );
+
                 $('.about-us .btn_plus').css( {
                     '-webkit-transform': 'translate( 0px, ' + ( scrollTop * .05 ) + 'px )',
                     'transform': 'translate( 0px, ' + ( scrollTop * .05 ) + 'px )'
@@ -291,6 +292,18 @@
                         } );
                     }
 
+                } );
+
+                $('.contact-us__logo').each( function () {
+
+                    var elem = $(this),
+                        offsetElem = elem.offset().top,
+                        koefY = .15;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px, 0px )',
+                        'transform': 'translate( ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px, 0px )'
+                    } );
                 } );
             },
             _init = function() {
