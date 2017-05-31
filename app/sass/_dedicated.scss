@@ -35,6 +35,12 @@
     margin-top: 115px;
     background-size: cover;
     background-position: center;
+    -webkit-filter: grayscale(100%);
+    @include transition(filter, $animation-time, .5);
+
+    &.animation {
+      -webkit-filter: grayscale(0);
+    }
   }
   &__hero-link {
     position: absolute;
@@ -80,7 +86,7 @@
           left: 5px;
           width: 11px;
           height: 1px;
-          background: #000;
+          background: $main-black-color;
           content: '';
         }
       }
