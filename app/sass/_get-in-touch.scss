@@ -93,7 +93,14 @@
   }
 
   &__submit {
+    overflow: hidden;
+    height: 0;
     text-align: left;
+    transition: height .3s linear;
+
+    &.show {
+      height: 50px;
+    }
   }
 
   &__footer {

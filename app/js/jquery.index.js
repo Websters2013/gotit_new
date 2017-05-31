@@ -386,6 +386,8 @@
         var _self = this,
             _obj = obj,
             _header = $( '.site__header' ),
+            _textarea = _obj.find( 'textarea' ),
+            _submit = _obj.find( '.get-in-touch__submit' ),
             _showBtn = $( '.get-in-touch-btn' );
         
         //private methods
@@ -401,6 +403,23 @@
                         _open();
 
                         return false;
+                    }
+                } );
+
+                _textarea.on( {
+                    keyup: function() {
+                        var elem = $(this),
+                            elemValue = elem.val();
+
+                        if ( !elemValue == '' && !_submit.hasClass( 'show' ) ) {
+                            _submit.addClass( 'show' );
+                        }
+
+                        if ( elemValue == '' ) {
+                            _submit.removeClass( 'show' );
+                        }
+
+                        console.log(elemValue);
                     }
                 } );
 
