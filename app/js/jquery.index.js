@@ -311,6 +311,17 @@
                         'transform': 'translate( ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px, 0px )'
                     } );
                 } );
+
+                $('.our-services__item-pic').each( function (i) {
+                    var elem = $(this),
+                        offsetElem = elem.offset().top,
+                        koefY = .1;
+
+                    elem.css( {
+                        '-webkit-transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )',
+                        'transform': 'translate( 0px, ' + ( ( scrollTop - offsetElem ) * koefY ) + 'px )'
+                    } );
+                } );
             },
             _init = function() {
                 _addEvents();
