@@ -2,8 +2,9 @@
 .newsletter {
   position: relative;
   width: 100%;
+  max-width: 665px;
   margin: 0 auto 54px;
-  max-width: 625px;
+  padding: 0 20px;
 
   input {
     width: 100%;
@@ -17,6 +18,7 @@
     font-size: 12px;
     text-align: center;
     border-bottom: 0;
+    border-radius: 0;
     @include main-font1();
     font-weight: 700;
     text-transform: uppercase;
@@ -27,8 +29,8 @@
     height: 50px;
     letter-spacing: 3px;
     font-size: 12px;
-    @include main-font1();
     font-weight: 700;
+    @include main-font1();
   }
 }
 
