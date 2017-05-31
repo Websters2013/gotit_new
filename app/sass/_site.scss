@@ -420,19 +420,23 @@
           position: absolute;
           top: 55%;
           left: 0;
-          width: 0;
-          -webkit-transition: width .2s cubic-bezier(.15,.9,.34,.95);
-          transition: width .2s cubic-bezier(.15,.9,.34,.95);
+          width: 100%;
+          transform-origin: right center;
+          transform: scale(0, 1);
+          -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           content: '';
         }
         &.active {
 
           &:hover:after {
-            width: 0;
+            transform-origin: left center;
+            transform: scale(0, 1);
           }
         }
         &:hover:after {
-          width: 100%;
+          transform-origin: left center;
+          transform: scale(1, 1);
         }
       }
     }

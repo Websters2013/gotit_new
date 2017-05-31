@@ -42,6 +42,13 @@ var paths = {
                 'app/js/jquery.paralax.js',
                 'app/js/jquery.map.js'
             ]
+        },
+        {
+            dist: 'dedicated.min.js',
+            contains: [
+                'app/js/jquery.index.js',
+                'app/js/jquery.main.js'
+            ]
         }
     ],
     vendorScripts: 'app/js/vendors/**/*.js',
