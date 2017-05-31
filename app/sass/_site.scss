@@ -230,7 +230,7 @@
   &__menu-wrap {
     position: absolute;
     top: 72px;
-    bottom: 72px;
+    bottom: 15px;
     left: 15px;
     right: 15px;
     display: flex;
@@ -345,17 +345,12 @@
     }
   }
 }
-@media (min-width: $tablet-landscape) {
-  .site {
 
-
-  }
-}
 @media (min-width: $desktop) {
   .site {
 
     &__header {
-      padding: 36px 0;
+      padding: 38px 0;
       top: 0;
       z-index: 3;
     }
@@ -405,7 +400,7 @@
       padding: 0 65px;
     }
     &__menu-wrap {
-      top: 150px;
+      top: 177px;
       left: 61px;
       right: 61px;
     }
