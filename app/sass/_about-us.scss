@@ -5,6 +5,10 @@
   text-align: center;
   z-index: 1;
 
+  &.about-us_detail {
+    margin-top: 30px;
+  }
+
   &__letters {
     display: none;
     font-size: 15vh;
@@ -333,7 +337,8 @@
     padding: 51px 0 124px;
 
     &.about-us_detail {
-      padding: 153px 0 124px;
+      padding: 181px 0 124px;
+      margin-top: 0;
     }
 
     &__letters {
@@ -345,34 +350,34 @@
         height: 169px;
 
         &:nth-child(1) {
-          top: 241px;
+          top: 259px;
           left: 44%;
         }
 
         &:nth-child(2) {
-          top: 515px;
+          top: 533px;
           left: 25.5%;
         }
 
         &:nth-child(3) {
-          top: 928px;
+          top: 948px;
           left: 67%;
         }
 
         &:nth-child(4) {
-          top: 1105px;
+          top: 1125px;
           left: 3%;
         }
 
         &:nth-child(5) {
-          top: 1427px;
+          top: 1447px;
           left: 19%;
         }
       }
     }
 
     &__title {
-      top: 206px;
+      top: 233px;
       left: calc(19.2% + 424px + 33px);
       font-size: 48px;
       line-height: 1.4em;
@@ -402,7 +407,7 @@
     }
 
     &__image {
-      top: 399px;
+      top: 426px;
       left: 31%;
       width: 418px;
       height: 691px;
