@@ -72,10 +72,10 @@
     }
     address {
       padding: 14px 0 0;
-      font-size: 16px;
+      font-size: 12px;
       @include main-font2();
       font-weight: 600;
-      letter-spacing: 5px;
+      letter-spacing: 3px;
 
       span {
         display: block;
@@ -86,6 +86,7 @@
 }
 
 @media (min-width: $tablet-portrait) {
+
   .contact {
     margin-bottom: 143px;
 
@@ -104,6 +105,10 @@
       &:nth-child(2) {
         top: 55.2%;
         right: -9.8%;
+      }
+      address {
+        font-size: 16px;
+        letter-spacing: 5px;
       }
     }
   }

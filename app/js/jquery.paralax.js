@@ -7,7 +7,7 @@
         $.each( $( '.paralax' ), function () {
 
             new Paralax( $( this ) );
-
+            console.log('paralax')
         });
     });
 
@@ -59,6 +59,8 @@
                     curPos = minTop,
                     curScroll = _window.scrollTop()+150;
 
+                console.log(curScroll,minScroll);
+
                 if ( curScroll <= minScroll ){
 
                     if ( direction < 0 ){
@@ -96,6 +98,8 @@
 
                     }
                 }
+
+                console.log(curPos);
 
                 if ( item.hasClass( 'sideways' ) ) {
 

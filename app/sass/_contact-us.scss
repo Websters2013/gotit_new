@@ -7,55 +7,75 @@
     .contact__map-location-item {
 
       &:nth-child(1) {
-        top: 17%;
-      }
-      &:nth-child(2) {
-
+        top: -8%;
       }
     }
   }
   &__hero {
-    padding: 182px 0 191px;
+    padding: 128px 15px;
   }
   &__title {
     max-width: 615px;
     margin: 0 auto;
-    font-size: 80px;
-    line-height: 90px;
+    font-size: 42px;
+    line-height: 61px;
     font-weight: bold;
     letter-spacing: 2.4px;
     color: $main-black-color;
 
-    span {
+    > span {
       display: block;
       margin-bottom: 8px;
     }
     mark {
+      position: relative;
       display: inline-block;
       background: transparent;
-      margin-left: 102px;
+      margin-left: 14px;
       padding: 0 14px 0;
       white-space: nowrap;
-      @include transition( background, $animation-time, 1 )
+      @include transition( background, $animation-time, 1 );
+
+      &:before {
+        opacity: 0;
+        @include absolutePosition();
+        background: $main-yellow-color;
+        -webkit-transform: translateX(200%);
+        transform: translateX(200%);
+        -webkit-transition: transform 1.2s cubic-bezier(.165,.84,.44,1),opacity 1.2s cubic-bezier(.165,.84,.44,1);
+        transition: transform 1.2s cubic-bezier(.165,.84,.44,1),opacity 1.2s cubic-bezier(.165,.84,.44,1),-webkit-transform 1.2s cubic-bezier(.165,.84,.44,1);
+        transition-delay: .5s;
+        content: '';
+      }
+      > span {
+        position: relative;
+      }
     }
     &.animation {
 
       mark {
-        background: $main-yellow-color;
+
+        &:before {
+          opacity: 1;
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
       }
     }
   }
   &__wrap {
     position: relative;
-    max-width: 901px;
-    margin: 0 auto 180px;
+    max-width: 930px;
+    padding: 0 15px;
+    margin: 0 auto 100px;
   }
   &__logo {
     position: absolute;
-    right: -108px;
-    top: -241px;
-    width: 282.5px;
-    height: 259.7px;
+    left: 50%;
+    margin-left: -107px;
+    top: -344px;
+    width: 214.5px;
+    height: 207.7px;
 
     svg {
       width: 100%;
@@ -63,13 +83,13 @@
     }
   }
   &__call-now {
-    width: 550px;
+    max-width: 550px;
 
     span {
       position: relative;
       display: inline-block;
-      margin-bottom: 23px;
-      font-size: 48px;
+      margin-bottom: 16px;
+      font-size: 27px;
       font-weight: bold;
       letter-spacing: 1.4px;
       color: $main-black-color;
@@ -87,7 +107,7 @@
     a {
       opacity: 0;
       display: block;
-      font-size: 80px;
+      font-size: 40px;
       font-weight: bold;
       letter-spacing: 2.4px;
       cursor: default;
@@ -113,9 +133,60 @@
 
 @media (min-width: $tablet-portrait) {
 
+  .contact-us {
+
+    .contact {
+      margin-bottom: 360px;
+
+      .contact__map-location-item {
+
+        &:nth-child(1) {
+          top: 17%;
+        }
+      }
+    }
+    &__hero {
+      padding: 182px 15px 191px;
+    }
+    &__title {
+      font-size: 80px;
+      line-height: 90px;
+
+      mark {
+        margin-left: 102px;
+      }
+    }
+    &__wrap {
+      margin: 0 auto 180px;
+    }
+    &__logo {
+      left: auto;
+      right: 20px;
+      top: -241px;
+      width: 282.5px;
+      height: 259.7px;
+      margin-left: 0;
+    }
+    &__call-now {
+
+      span {
+        margin-bottom: 23px;
+        font-size: 48px;
+      }
+      a {
+        font-size: 80px;
+      }
+    }
+  }
 }
 
 @media (min-width: $desktop) {
 
+  .contact-us {
+
+    &__logo {
+      right: -108px;
+    }
+  }
 }
 
