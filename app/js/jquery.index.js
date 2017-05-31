@@ -158,9 +158,12 @@
                     var curItem = $(this),
                         topPos = _obj.offset().top;
 
-                    if( ( _window.scrollTop() + windowH*0.7 ) > topPos && !curItem.hasClass( 'animation' ) ){
-                        console.log(100);
-                        curItem.addClass( 'animation' );
+                    if( ( _window.scrollTop() + windowH*0.8 ) > topPos && !curItem.hasClass( 'animation' ) ){
+                        if ( curItem.hasClass( 'show_is' ) ) {
+                            curItem.addClass( 'is-inview' );
+                        } else {
+                            curItem.addClass( 'animation' );
+                        }
                     }
                 })
             },
@@ -206,8 +209,7 @@
 
                 $('.hero__title').each( function (i) {
                     var elem = $(this),
-                        koefX = .8,
-                        koefY = .8;
+                        koefX = .8;
 
                     switch ( i ) {
                         case 0:

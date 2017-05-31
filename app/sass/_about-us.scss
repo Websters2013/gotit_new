@@ -6,35 +6,53 @@
   z-index: 1;
 
   &__letters {
-    font-size: 144px;
-    font-weight: bold;
+    display: none;
+    font-size: 15vh;
+    font-weight: 700;
     letter-spacing: 7.6px;
     color: #000000;
     text-transform: uppercase;
 
     div {
+      overflow: hidden;
       position: absolute;
-      width: 106px;
-      height: 169px;
+      padding: 10px 0;
       z-index: 1;
 
+      &.is-inview {
+
+        span {
+          transform: translate(0,0) !important;
+        }
+      }
+
+      &:nth-child(2n-1) span {
+        transform: translate(0, -100%);
+      }
+
+      span {
+        display: block;
+        transition: transform 0.9s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translate(0, 100%);
+      }
+
       &:nth-child(1) {
-        top: 26vh;
-        left: 44%;
+        top: 8vh;
+        left: 33%;
       }
 
       &:nth-child(2) {
-        top: 50vh;
-        left: 30%;
+        top: 42vh;
+        left: 12%;
       }
 
       &:nth-child(3) {
-        top: 120vh;
+        top: 80vh;
         left: 70%;
       }
 
       &:nth-child(4) {
-        top: 130vh;
+        top: 114vh;
         left: 20%;
       }
 
@@ -195,6 +213,8 @@
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
     text-align: left;
   }
 
@@ -265,19 +285,14 @@
   }
 }
 
-@media (min-width: $tablet-landscape) {
-  .about-us {
-
-    &__image {
-
-    }
-  }
-}
-
 @media (min-width: $tablet-portrait) {
   .about-us {
     width: 700px;
     margin: 0 auto;
+
+    &__letters {
+      display: block;
+    }
 
     &__border {
 
@@ -318,11 +333,46 @@
     padding: 51px 0 124px;
 
     &.about-us_detail {
-      padding: 182px 0 124px;
+      padding: 153px 0 124px;
+    }
+
+    &__letters {
+      font-size: 144px;
+      letter-spacing: 7.6px;
+
+      div {
+        width: 106px;
+        height: 169px;
+
+        &:nth-child(1) {
+          top: 241px;
+          left: 44%;
+        }
+
+        &:nth-child(2) {
+          top: 515px;
+          left: 25.5%;
+        }
+
+        &:nth-child(3) {
+          top: 928px;
+          left: 67%;
+        }
+
+        &:nth-child(4) {
+          top: 1105px;
+          left: 3%;
+        }
+
+        &:nth-child(5) {
+          top: 1427px;
+          left: 19%;
+        }
+      }
     }
 
     &__title {
-      top: 235px;
+      top: 206px;
       left: calc(19.2% + 424px + 33px);
       font-size: 48px;
       line-height: 1.4em;
@@ -352,7 +402,7 @@
     }
 
     &__image {
-      top: 428px;
+      top: 399px;
       left: 31%;
       width: 418px;
       height: 691px;
@@ -361,7 +411,7 @@
     &__content {
       width: 1150px;
       margin: 0 auto;
-      padding: 374px 0 161px calc(46.5%);
+      padding: 378px 0 161px calc(46.5%);
       font-size: 16px;
       line-height: 1.38;
       letter-spacing: 1px;
