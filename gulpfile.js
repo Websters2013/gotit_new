@@ -30,8 +30,7 @@ var paths = {
             contains: [
                 'app/js/jquery.index.js',
                 'app/js/jquery.main.js',
-                'app/js/jquery.scroll-to.js',
-                'app/js/jquery.paralax.js'
+                'app/js/jquery.scroll-to.js'
             ]
         },
         {
@@ -39,7 +38,6 @@ var paths = {
             contains: [
                 'app/js/jquery.index.js',
                 'app/js/jquery.main.js',
-                'app/js/jquery.paralax.js',
                 'app/js/jquery.map.js'
             ]
         },

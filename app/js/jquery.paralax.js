@@ -6,7 +6,7 @@
 
         $.each( $( '.paralax' ), function () {
 
-            new Paralax( $( this ) );
+            // new Paralax( $( this ) );
             console.log('paralax')
         });
     });
@@ -57,9 +57,7 @@
                     minScroll = _offsetTop + minTop,
                     maxScroll = _offsetTop + maxTop + item[ 0 ].height,
                     curPos = minTop,
-                    curScroll = _window.scrollTop()+150;
-
-                console.log(curScroll,minScroll);
+                    curScroll = _window.scrollTop()+_window.height()/1.8;
 
                 if ( curScroll <= minScroll ){
 
@@ -99,8 +97,6 @@
                     }
                 }
 
-                console.log(curPos);
-
                 if ( item.hasClass( 'sideways' ) ) {
 
                     if ( curPos < 0 ) {
@@ -110,7 +106,7 @@
                     }
 
                     item.css( {
-                        transform: 'translate('+curPos+'px, -50%)'
+                        transform: 'translate('+curPos+'px, 0)'
                     } );
 
 

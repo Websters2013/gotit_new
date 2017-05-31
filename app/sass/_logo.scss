@@ -7,12 +7,12 @@
   left: 0;
   height: 49px;
   width: 50px;
-  z-index: 1;
+  z-index: 5;
   pointer-events: auto;
   transition: width 0.9s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
   svg {
-    fill: #000000;
+    fill: $main-black-color;
     position: absolute;
     left: 0;
     top: 0;
