@@ -6,34 +6,53 @@
   z-index: 1;
 
   &__letters {
-    font-size: 144px;
-    font-weight: bold;
+    display: none;
+    font-size: 15vh;
+    font-weight: 700;
     letter-spacing: 7.6px;
     color: #000000;
     text-transform: uppercase;
 
     div {
+      overflow: hidden;
       position: absolute;
       padding: 10px 0;
       z-index: 1;
 
+      &.is-inview {
+
+        span {
+          transform: translate(0,0) !important;
+        }
+      }
+
+      &:nth-child(2n-1) span {
+        transform: translate(0, -100%);
+      }
+
+      span {
+        display: block;
+        transition: transform 0.9s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translate(0, 100%);
+      }
+
       &:nth-child(1) {
-        top: 26vh;
-        left: 44%;
+        top: 8vh;
+        left: 33%;
       }
 
       &:nth-child(2) {
-        top: 50vh;
-        left: 30%;
+        top: 42vh;
+        left: 12%;
       }
 
       &:nth-child(3) {
-        top: 120vh;
+        top: 80vh;
         left: 70%;
       }
 
       &:nth-child(4) {
-        top: 130vh;
+        top: 114vh;
         left: 20%;
       }
 
@@ -194,6 +213,8 @@
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
     text-align: left;
   }
 
@@ -264,19 +285,14 @@
   }
 }
 
-@media (min-width: $tablet-landscape) {
-  .about-us {
-
-    &__image {
-
-    }
-  }
-}
-
 @media (min-width: $tablet-portrait) {
   .about-us {
     width: 700px;
     margin: 0 auto;
+
+    &__letters {
+      display: block;
+    }
 
     &__border {
 
