@@ -31,11 +31,11 @@
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: scale(0, 1);
     transform-origin: right center;
-    background: #000000;
+    background: $main-black-color;
   }
 
   &:hover {
-    color: #ffffff;
+    color: $main-white-color;
 
     &:before {
       transform: scale(1, 1);
@@ -56,18 +56,18 @@
     padding: 0;
     font-size: 16px;
     letter-spacing: 0;
-    background-color: #000;
-    color: #fff;
+    background-color: $main-black-color;
+    color: $main-white-color;
 
-    &:before { background-color: #fff }
+    &:before { background-color: $main-white-color }
 
     &:hover {
-      color: #000;
+      color: $main-black-color;
     }
   }
 
   &.btn_2 {
-    background-color: #f3f569;
+    background-color: $main-yellow-color;
     border: none;
   }
 }

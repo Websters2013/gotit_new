@@ -228,6 +228,7 @@
     }
   }
   &__menu-wrap {
+    overflow-y: scroll;
     position: absolute;
     top: 72px;
     bottom: 15px;

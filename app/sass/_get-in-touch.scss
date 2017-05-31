@@ -22,7 +22,7 @@
   }
 
   &__wrap {
-    overflow: scroll;
+    overflow-y: scroll;
     position: absolute;
     top: 72px;
     bottom: 15px;
@@ -106,6 +106,9 @@
   &__footer {
     display: none;
   }
+}
+.get-in-touch-btn {
+  cursor: pointer;
 }
 
 @media (min-width: $tablet-landscape) {
