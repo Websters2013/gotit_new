@@ -53,6 +53,10 @@
             new Search( $(this) );
         } );
 
+        $('.get-in-touch').each( function() {
+            new GetInTouch( $(this) );
+        } );
+
     });
 
     var Hero = function (obj) {
@@ -339,10 +343,12 @@
                 _showBtn.on( {
                     click: function() {
 
-                        _openSeach( $( this ) );
-                        setTimeout( function () {
-                            _searchField.focus();
-                        }, 300 )
+                        if ( !$(this).hasClass( 'get-in-touch-opened' ) ) {
+                            _openSeach( $( this ) );
+                            setTimeout( function () {
+                                _searchField.focus();
+                            }, 300 )
+                        }
                     }
                 } );
             },
@@ -354,12 +360,6 @@
 
                     curItem.removeClass( 'opened' );
                     _obj.removeClass( 'opened' );
-                    _showBtn.removeClass( 'opened' );
-                    // $('.hero').addClass('is-inview');
-
-                    // _scroller.css( {
-                    //     'overflow': 'visible'
-                    // } );
 
                     _header.css({
                         'z-index': 2
@@ -369,18 +369,67 @@
 
                     curItem.addClass( 'opened' );
                     _obj.addClass( 'opened' );
-                    _showBtn.addClass( 'opened' );
-                    $( '.site__menu, .site__menu-btn' ).removeClass( 'opened' );
-                    // $('.hero').removeClass('is-inview');
-
-                    // _scroller.css( {
-                    //     'overflow': 'hidden'
-                    // } );
+                    $( '.site__menu, .site__menu-btn, .get-in-touch' ).removeClass( 'opened' );
 
                     _header.css({
                         'z-index': 15
                     });
                 }
+            };
+
+        _constructor();
+    };
+
+    var GetInTouch = function( obj ) {
+
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _header = $( '.site__header' ),
+            _showBtn = $( '.get-in-touch-btn' );
+        
+        //private methods
+        var _constructor = function() {
+                _obj[ 0 ].obj = _self;
+                _onEvents();
+            },
+            _onEvents = function() {
+
+                _showBtn.on( {
+                    click: function() {
+
+                        _open();
+
+                        return false;
+                    }
+                } );
+
+                $( '.search-btn' ).on( {
+                    click: function() {
+
+                        if ( $(this).hasClass( 'get-in-touch-opened' ) ) {
+                            $(this).removeClass( 'get-in-touch-opened' );
+                            _close();
+                        }
+                    }
+                } );
+            },
+            _close = function()  {
+
+                _obj.removeClass( 'opened' );
+
+                _header.css({
+                    'z-index': 2
+                });
+            },
+            _open = function()  {
+
+                _obj.addClass( 'opened' );
+                $( '.search-btn' ).addClass( 'get-in-touch-opened' );
+
+                _header.css({
+                    'z-index': 15
+                });
             };
 
         _constructor();

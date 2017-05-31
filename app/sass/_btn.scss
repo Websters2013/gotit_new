@@ -65,6 +65,11 @@
       color: #000;
     }
   }
+
+  &.btn_2 {
+    background-color: #f3f569;
+    border: none;
+  }
 }
 
 @media (min-width: $desktop) {

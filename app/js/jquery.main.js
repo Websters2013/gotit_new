@@ -34,7 +34,6 @@
                 } );
             },
             _openMenu = function( elem )  {
-                console.log('menu');
 
                 var curItem = elem;
 
@@ -55,7 +54,8 @@
 
                     curItem.addClass( 'opened' );
                     _menu.addClass( 'opened' );
-                    $( '.search, .search-btn' ).removeClass( 'opened' );
+                    $( '.search, .search-btn, .get-in-touch' ).removeClass( 'opened' );
+                    $( '.get-in-touch-opened' ).removeClass( 'get-in-touch-opened' );
 
                     // _scroller.css( {
                     //     'overflow': 'hidden'
