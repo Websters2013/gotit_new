@@ -14,7 +14,7 @@
         $('.hero').each( function() {
             new Hero( $(this) );
         } );
-s
+
         $('.services').each( function() {
             new Services( $(this) );
         } );
