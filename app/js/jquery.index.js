@@ -5,39 +5,16 @@
         $( window ).on( {
             'load': function () {
                 $('html, body').animate({scrollTop: 0},1);
-                setTimeout( function () {
-                    $('.loading').removeClass('active');
-                    $('.hero').addClass('is-inview');
-                    $('.about-us').addClass('is-inview');
-                }, 1 )
+                $('.loading').removeClass('active');
+                $('.hero').addClass('is-inview');
+                $('.about-us_detail').addClass('is-inview');
             }
         } );
-
-        // var $window = $(window),
-        //     scrollTime = 1.2,
-        //     scrollDistance = 170;
-        //
-        // $window.on("mousewheel DOMMouseScroll", function(event){
-        //
-        //     if ( canUseSmoothScroll ) {
-        //         event.preventDefault();
-        //
-        //         var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3,
-        //             scrollTop = $window.scrollTop(),
-        //             finalScroll = scrollTop - parseInt( delta * scrollDistance );
-        //
-        //         TweenMax.to( $window, scrollTime, {
-        //             scrollTo : { y: finalScroll, autoKill:true },
-        //             ease: Power1.easeOut,
-        //             overwrite: 5
-        //         });
-        //     }
-        // });
 
         $('.hero').each( function() {
             new Hero( $(this) );
         } );
-
+s
         $('.services').each( function() {
             new Services( $(this) );
         } );
