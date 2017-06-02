@@ -3,7 +3,7 @@
   position: relative;
   padding: 50px 0;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
 
   &.about-us_detail {
     margin-top: 30px;
@@ -250,7 +250,7 @@
     &-thumb {
       display: block;
       height: 288px;
-      margin-bottom: -29px;
+      margin-bottom: 15px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;

@@ -1,4 +1,3 @@
-
 ( function() {
     "use strict";
 
@@ -8,6 +7,7 @@
 
             new Menu ( $( this ) );
         } );
+
     });
 
     var Menu = function( obj ) {
