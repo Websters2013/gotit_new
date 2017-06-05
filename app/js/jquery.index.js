@@ -189,22 +189,22 @@
                     }
                 });
 
-                // _window.on({
-                //     'mousewheel': function( event ) {
-                //         if ( _canUseSmoothScroll ) {
-                //             event.preventDefault();
-                //
-                //             _siteScroll( event );
-                //         }
-                //     },
-                //     'DOMMouseScroll': function( event ) {
-                //         if ( _canUseSmoothScroll ) {
-                //             event.preventDefault();
-                //
-                //             _siteScroll( event );
-                //         }
-                //     }
-                // });
+                _window.on({
+                    'mousewheel': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+                        }
+                    },
+                    'DOMMouseScroll': function( event ) {
+                        if ( _canUseSmoothScroll ) {
+                            event.preventDefault();
+
+                            _siteScroll( event );
+                        }
+                    }
+                });
 
             },
             _move = function( scrollTop ){

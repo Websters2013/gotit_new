@@ -113,7 +113,8 @@
 
 .search-btn {
   overflow: hidden;
-  display: block;
+  //display: block;
+  display: none;
   @include absoluteCenterY;
   z-index: 4;
   right: 15px;
