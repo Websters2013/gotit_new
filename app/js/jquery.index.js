@@ -4,10 +4,12 @@
 
         $( window ).on( {
             'load': function () {
+
                 $('html, body').animate({scrollTop: 0},1);
                 $('.loading').removeClass('active');
                 $('.hero').addClass('is-inview');
                 $('.about-us_detail').addClass('is-inview');
+
             }
         } );
 
