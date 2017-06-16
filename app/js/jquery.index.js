@@ -385,9 +385,9 @@
                     }
                 } );
 
-                _form.on( {
-                    submit: function() {
-                        var text = $(this).find( 'input' ).val();
+                _searchField.on( {
+                    keyup: function() {
+                        var text = $(this).val();
 
                         _request.abort();
                         _request = $.ajax({
