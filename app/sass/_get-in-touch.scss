@@ -61,7 +61,8 @@
     }
   }
 
-  &__field {
+  &__field,
+  .gfield {
     text-align: left;
 
     label {
@@ -92,7 +93,8 @@
     }
   }
 
-  &__submit {
+  &__submit,
+  .gform_footer {
     overflow: hidden;
     height: 0;
     text-align: left;
@@ -125,7 +127,8 @@
       padding: 98px 110px;
     }
 
-    &__field {
+    &__field,
+    .gform_fields {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -134,9 +137,14 @@
         margin-bottom: 51px;
       }
 
-      > div {
-        width: calc(50% - 10px);
+      .gfield {
+        width: 100%;
         text-align: left;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          width: calc(50% - 10px);
+        }
       }
     }
 
@@ -201,15 +209,16 @@
       }
     }
 
-    &__field {
+    &__field,
+    .gform_fields {
       max-width: 716px;
 
-      > div {
-        width: calc(50% - 21px);
-      }
+      .gfield {
 
-      input {
-
+        &:nth-child(1),
+        &:nth-child(2) {
+          width: calc(50% - 21px);
+        }
       }
     }
 

@@ -32,6 +32,26 @@
                         _openMenu( $( this ) );
                     }
                 } );
+
+                $(window).on( {
+                    keyup: function(e) {
+
+                        if (e.which == 27) {
+                            _showBtn.removeClass( 'opened' );
+                            _menu.removeClass( 'opened' );
+
+                            _scroller.css( {
+                                'overflow-y': 'auto'
+                            } );
+
+                            $( '.site' )[0].obj.setCanUseScroll( true );
+
+                            _obj.css({
+                                'z-index': 2
+                            });
+                        }
+                    }
+                } );
             },
             _openMenu = function( elem )  {
 

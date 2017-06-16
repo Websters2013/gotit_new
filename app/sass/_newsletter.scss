@@ -6,6 +6,8 @@
   margin: 0 auto 54px;
   padding: 0 20px;
 
+  .gfield_label { display: none }
+
   input {
     width: 100%;
     height: 50px;
@@ -25,7 +27,6 @@
   }
 
   .btn {
-    pointer-events: none;
     width: 100%;
     height: 50px;
     letter-spacing: 3px;
@@ -51,11 +52,14 @@
 
 @media (min-width: $desktop) {
   .newsletter {
-    display: flex;
-    margin-bottom: 87px;
 
-    > * {
-      width: 50%;
+    form {
+      display: flex;
+      margin-bottom: 87px;
+
+      > * {
+        width: 50%;
+      }
     }
 
     input {

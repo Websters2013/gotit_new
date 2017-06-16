@@ -114,8 +114,7 @@
   }
 
   &__menu-btn {
-    //display: block;
-    display: none;
+    display: block;
     @include absoluteCenterY;
     z-index: 4;
     left: 15px;

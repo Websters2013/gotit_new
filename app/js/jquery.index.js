@@ -359,7 +359,9 @@
             _header = $( '.site__header' ),
             _scroller = $( 'body, html' ),
             _searchField = _obj.find( 'input' ),
-            _showBtn = $( '.search-btn' );
+            _showBtn = $( '.search-btn' ),
+            _path = $( 'body' ).attr( 'data-action' ),
+            _request = new XMLHttpRequest();
 
         //private methods
         var _constructor = function() {
@@ -376,6 +378,58 @@
                             setTimeout( function () {
                                 _searchField.focus();
                             }, 300 )
+                        }
+                    }
+                } );
+
+                _searchField.on( {
+                    click: function() {
+
+                        _request.abort();
+                        _request = $.ajax({
+                            url: _path,
+                            data: _obj.serialize(),
+                            dataType: 'html',
+                            timeout: 20000,
+                            type: "get",
+                            success: function () {
+
+                                //_obj.trigger( 'reset' );
+
+                                //_obj.addClass( 'site__form-success' );
+
+                                //if ( _sentMessageMark.length ) {
+                                //    _sentMessageMark.addClass( 'site__form-sent_show' );
+                                //
+                                //}
+
+                            },
+                            error: function ( XMLHttpRequest ) {
+                                if( XMLHttpRequest.statusText != "abort" ) {
+                                    alert( 'Error!' );
+                                }
+                            }
+                        });
+
+                    }
+                } );
+
+                $(window).on( {
+                    keyup: function(e) {
+
+                        if (e.which == 27) {
+                            _showBtn.removeClass( 'opened' );
+                            _obj.removeClass( 'opened' );
+
+                            _html.css({
+                                'overflow-y': 'auto'
+                            });
+
+                            $( '.site' )[0].obj.setCanUseScroll( true );
+
+                            _header.css({
+                                'z-index': 2
+                            });
                         }
                     }
                 } );
@@ -428,7 +482,7 @@
             _html = $( 'html' ),
             _header = $( '.site__header' ),
             _textarea = _obj.find( 'textarea' ),
-            _submit = _obj.find( '.get-in-touch__submit' ),
+            _submit = _obj.find( '.get-in-touch__submit, .gform_footer' ),
             _showBtn = $( '.get-in-touch-btn' );
         
         //private methods
@@ -437,6 +491,26 @@
                 _onEvents();
             },
             _onEvents = function() {
+
+                $(window).on( {
+                    keyup: function(e) {
+
+                        if (e.which == 27) {
+                            $( '.search-btn' ).removeClass( 'get-in-touch-opened' );
+                            _obj.removeClass( 'opened' );
+
+                            _html.css({
+                                'overflow-y': 'auto'
+                            });
+
+                            $( '.site' )[0].obj.setCanUseScroll( true );
+
+                            _header.css({
+                                'z-index': 2
+                            });
+                        }
+                    }
+                } );
 
                 _showBtn.on( {
                     click: function() {

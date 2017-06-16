@@ -113,8 +113,7 @@
 
 .search-btn {
   overflow: hidden;
-  //display: block;
-  display: none;
+  display: block;
   @include absoluteCenterY;
   z-index: 4;
   right: 15px;
@@ -205,6 +204,8 @@
       .newsletter {
         margin: 0;
         width: 40%;
+
+        form { margin: 0 }
       }
     }
 
