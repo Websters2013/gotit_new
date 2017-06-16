@@ -360,6 +360,9 @@
             _scroller = $( 'body, html' ),
             _searchField = _obj.find( 'input' ),
             _showBtn = $( '.search-btn' ),
+            _form = _obj.find( '.search__wrap form' ),
+            _results = _obj.find( '.search__results' ),
+            _founds = _obj.find( '.search__found dd' ),
             _path = $( 'body' ).attr( 'data-action' ),
             _request = new XMLHttpRequest();
 
@@ -382,26 +385,48 @@
                     }
                 } );
 
-                _searchField.on( {
-                    keyup: function() {
+                _form.on( {
+                    submit: function() {
+                        var text = $(this).find( 'input' ).val(),
+                        data = {
+                            count: 4,
+                            items: [
+                                {
+                                    link: '/about-us.html',
+                                    title: 'about us'
+                                },
+                                {
+                                    link: '/about-us2.html',
+                                    title: 'about us2'
+                                },
+                                {
+                                    link: '/about-us3.html',
+                                    title: 'about us3'
+                                },
+                                {
+                                    link: '/about-us4.html',
+                                    title: 'about us4'
+                                }
+                            ]
+                        };
+                        console.log(text);
 
+                        _createResult( data );
+                        
+                        return false;
                         _request.abort();
                         _request = $.ajax({
                             url: _path,
-                            data: _obj.serialize(),
-                            dataType: 'html',
+                            data: {
+                                action: 'gotit',
+                                text: text
+                            },
+                            dataType: 'json',
                             timeout: 20000,
                             type: "get",
-                            success: function () {
+                            success: function ( data ) {
 
-                                //_obj.trigger( 'reset' );
-
-                                //_obj.addClass( 'site__form-success' );
-
-                                //if ( _sentMessageMark.length ) {
-                                //    _sentMessageMark.addClass( 'site__form-sent_show' );
-                                //
-                                //}
+                                _createResult( data );
 
                             },
                             error: function ( XMLHttpRequest ) {
@@ -433,6 +458,18 @@
                         }
                     }
                 } );
+            },
+            _createResult = function ( data ) {
+                var items = data.items;
+
+                $( '.search__results span' ).remove();
+
+                for ( var i = 0; i < items.length; i++) {
+                    _results.append( '<span class="new"><a href="'+ items[i].link +'">' + items[i].title + '</a></span> ' );
+                }
+
+                _founds.text( data.count );
+
             },
             _openSeach = function( elem )  {
 

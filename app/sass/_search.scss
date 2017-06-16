@@ -95,10 +95,19 @@
     span {
       display: block;
       margin-bottom: 10px;
+
+      &.new {
+        overflow: hidden;
+
+        a {
+          animation: addNewElem 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1;
+        }
+      }
     }
 
     a,
     a:visited {
+      display: block;
       font-size: 3vh;
       line-height: 1.2em;
       font-weight: 600;
@@ -279,3 +288,21 @@
   }
 }
 /*---------- /search ---------*/
+
+@-webkit-keyframes addNewElem {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0);
+  }
+}
+
+@keyframes addNewElem {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
