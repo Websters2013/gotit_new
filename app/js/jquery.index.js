@@ -383,7 +383,7 @@
                 } );
 
                 _searchField.on( {
-                    click: function() {
+                    keyup: function() {
 
                         _request.abort();
                         _request = $.ajax({
