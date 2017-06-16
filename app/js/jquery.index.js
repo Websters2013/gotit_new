@@ -387,33 +387,33 @@
 
                 _form.on( {
                     submit: function() {
-                        var text = $(this).find( 'input' ).val(),
-                        data = {
-                            count: 4,
-                            items: [
-                                {
-                                    link: '/about-us.html',
-                                    title: 'about us'
-                                },
-                                {
-                                    link: '/about-us2.html',
-                                    title: 'about us2'
-                                },
-                                {
-                                    link: '/about-us3.html',
-                                    title: 'about us3'
-                                },
-                                {
-                                    link: '/about-us4.html',
-                                    title: 'about us4'
-                                }
-                            ]
-                        };
-                        console.log(text);
-
-                        _createResult( data );
-                        
-                        return false;
+                        var text = $(this).find( 'input' ).val();
+                        // data = {
+                        //     count: 4,
+                        //     items: [
+                        //         {
+                        //             link: '/about-us.html',
+                        //             title: 'about us'
+                        //         },
+                        //         {
+                        //             link: '/about-us2.html',
+                        //             title: 'about us2'
+                        //         },
+                        //         {
+                        //             link: '/about-us3.html',
+                        //             title: 'about us3'
+                        //         },
+                        //         {
+                        //             link: '/about-us4.html',
+                        //             title: 'about us4'
+                        //         }
+                        //     ]
+                        // };
+                        // console.log(text);
+                        //
+                        // _createResult( data );
+                        //
+                        // return false;
                         _request.abort();
                         _request = $.ajax({
                             url: _path,
