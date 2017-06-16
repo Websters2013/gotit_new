@@ -48,7 +48,7 @@
     margin-bottom: 57px;
 
     input {
-      height: 57px;
+      height: 57px !important;
     }
 
     .btn {
@@ -70,8 +70,8 @@
     }
 
     input {
-      border: 1px solid #000000;
-      border-right: 0;
+      border: 1px solid #000000 !important;
+      border-right: 0 !important;
     }
   }
 }
