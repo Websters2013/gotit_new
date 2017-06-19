@@ -13,9 +13,6 @@
 
     var Map = function ( obj ) {
 
-        // this.obj = obj;
-        // this.mapWrap = this.obj;
-
         //private properties
         var _self = this,
             _wrap = obj,
@@ -64,6 +61,7 @@
             _addMarker = function ( i, map ) {
 
                 var curItem = _data[ 'places' ][ i ],
+                    curIconUrl = _data[ 'icon' ],
                     curLatLng = new google.maps.LatLng( curItem[ 'lat' ], curItem[ 'lng' ] ),
                     bounds = new google.maps.LatLngBounds();
 
@@ -72,7 +70,7 @@
                     map: map,
                     clickable: false,
                     icon: {
-                        url: './img/map_icon.png',
+                        url: curIconUrl,
                         scaledSize: new google.maps.Size( 24, 33 )
                     }
                 } );
