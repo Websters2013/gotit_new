@@ -278,7 +278,7 @@
       text-transform: uppercase;
       @include main-font2();
       font-weight: 600;
-      color: #2d3244;
+      color: #2d3244 !important;
     }
   }
 }
