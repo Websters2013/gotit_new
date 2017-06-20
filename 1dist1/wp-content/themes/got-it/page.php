@@ -206,9 +206,11 @@ if(!empty($services)) {
 
 			<?= $team_string; ?>
 
+            <?php if(false) {?>
 			<!-- btn -->
 			<a href="#" class="btn btn_plus get-in-touch-btn"><span>+</span></a>
 			<!-- /btn -->
+            <?php } ?>
 
 		</div>
 		<!-- /about-us -->

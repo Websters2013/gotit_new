@@ -5,8 +5,8 @@
   display: inline-block;
   top: 0;
   left: 0;
-  height: 49px;
-  width: 50px;
+  height: 104px;
+  width: 111px;
   z-index: 5;
   pointer-events: auto;
   transition: width 0.9s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -21,10 +21,10 @@
   }
 }
 
-@media (min-width: $tablet-landscape) {
+/*@media (min-width: $tablet-landscape) {
   .logo {
     height: 104px;
     width: 111px;
   }
-}
+}*/
 /*---------- /logo ---------*/
