@@ -94,12 +94,12 @@ if(!empty($project)) {
 	$project_string = '<!-- case-preview__wrap --><div class="case-preview__wrap">';
     foreach ($project as $row) {
 	    $project_string .= '<!-- case-preview__item -->
-				<a href="#" class="case-preview__item">
+				<span class="case-preview__item">
                         <span class="case-preview__info">
                             <span>'.get_the_title($row).'</span>
                         </span>
 					<img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_the_title($row).'">
-				</a>
+				</span>
 				<!-- /case-preview__item -->';
     }
 	$project_string .= '</div><!-- /case-preview__wrap -->';

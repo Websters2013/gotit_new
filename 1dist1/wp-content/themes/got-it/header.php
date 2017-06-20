@@ -88,9 +88,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
                 <p class="site__menu-copyright">© <?= date(Y); ?> | <a href="/" target="_blank" class="link-underline"><?= get_field('copyright', 2); ?></a></p>
 
                 <!-- newsletter -->
-                <div class="newsletter">
-	                <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
-                </div>
+                <form action="<?= get_permalink(13); ?>" method="post" class="newsletter">
+
+                    <input type="email" placeholder="312-265-5420">
+
+                    <button type="submit" class="btn" title="Contact Us">
+                        <span>Contact Us</span>
+                    </button>
+
+                </form>
                 <!-- /newsletter -->
 
                 <!-- social -->
@@ -286,6 +292,9 @@ if( $locations && isset($locations[ $menu_name ]) ){
                 </g>
             </svg>
         </a>
+        <div class="phone-number">
+            <a href="tel:1-312-265-5420">312-265-5420</a>
+        </div>
 
     </header>
     <!-- /site__header -->

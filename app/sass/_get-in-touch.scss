@@ -32,20 +32,19 @@
     background-color: rgba(0, 0, 0, 0.02);
 
     textarea {
-      width: 100% !important;
-      height: 12vh !important;
-      margin: 5px 0 15px !important;
-      font-size: 8vh !important;
-      font-weight: 500 !important;
-      font-style: normal !important;
-      font-stretch: normal !important;
-      line-height: normal !important;
-      letter-spacing: -2.7px !important;
-      color: #000000 !important;
-      border: none !important;
-      background: transparent !important;
+      width: 100%;
+      height: 12vh;
+      margin: 5px 0 15px;
+      font-size: 8vh;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -2.7px;
+      color: #000000;
+      border: none;
+      background: transparent;
       @include main-font2();
-      font-family: "Roboto", sans-serif !important;
 
       &::-webkit-input-placeholder {
         color: rgba(0,0,0,.2);
@@ -62,46 +61,40 @@
     }
   }
 
-  &__field,
-  .gfield {
+  &__field {
     text-align: left;
 
     label {
-      display: inline-block !important;
+      display: inline-block;
       margin-bottom: 15px;
-      font-family: "Roboto", sans-serif !important;
-      font-size: 10px !important;
-      font-weight: 800 !important;
+      font-size: 10px;
+      font-weight: 800;
       letter-spacing: 2px;
       color: #000000;
-      text-transform: uppercase !important;
+      text-transform: uppercase;
     }
 
     input {
-      width: 100% !important;
-      height: 40px !important;
+      width: 100%;
+      height: 40px;
       margin-bottom: 20px;
-      background: transparent !important;
-      border: 0 !important;
-      border-bottom: 1px solid #000000 !important;
-      -webkit-appearance: none !important;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #000000;
+      -webkit-appearance: none;
       border-radius: 0 !important;
       transition: border 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       @include main-font2();
-      font-family: "Roboto", sans-serif !important;
 
       &:focus {
-        border-color: #b5b4b2 !important;
+        border-color: #b5b4b2;
       }
     }
   }
 
-  &__submit,
-  .gform_footer {
+  &__submit {
     overflow: hidden;
     height: 0;
-    padding: 0 !important;
-    margin: 0 !important;
     text-align: left;
     transition: height .3s linear;
 
@@ -118,6 +111,27 @@
   cursor: pointer;
 }
 
+.phone-number {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  right: 45px;
+  margin-top: -2px;
+  padding: 8px 12px;
+  letter-spacing: 3px;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 2vh;
+}
+
 @media (min-width: $tablet-landscape) {
   .get-in-touch {
 
@@ -132,24 +146,18 @@
       padding: 98px 110px;
     }
 
-    &__field,
-    .gform_fields {
-      display: flex !important;
+    &__field {
+      display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
 
       input {
-        margin-bottom: 51px !important;
+        margin-bottom: 51px;
       }
 
-      .gfield {
-        width: 100%;
+      > div {
+        width: calc(50% - 10px);
         text-align: left;
-
-        &:nth-child(1),
-        &:nth-child(2) {
-          width: calc(50% - 10px);
-        }
       }
     }
 
@@ -208,22 +216,21 @@
       right: 61px;
 
       textarea {
-        height: 150px !important;
-        margin: 9px 0 20px !important;
-        font-size: 90px !important;
+        height: 150px;
+        margin: 9px 0 20px;
+        font-size: 90px;
       }
     }
 
-    &__field,
-    .gform_fields {
+    &__field {
       max-width: 716px;
 
-      .gfield {
+      > div {
+        width: calc(50% - 21px);
+      }
 
-        &:nth-child(1),
-        &:nth-child(2) {
-          width: calc(50% - 21px);
-        }
+      input {
+
       }
     }
 
@@ -235,7 +242,28 @@
       .newsletter {
         width: 100%;
       }
+
     }
   }
 }
+@media only screen and (max-width: $desktop) {
+  .phone-number {
+    right: 4px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .phone-number {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: white;
+    margin: 0;
+    right: 0;
+    top: 92px;
+    padding: 10px 0;
+  }
+}
+
+
 /*---------- /get-in-touch ---------*/
