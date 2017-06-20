@@ -180,7 +180,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
 
                 <!-- newsletter -->
                 <div class="newsletter">
-			            <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
+
+                    <a href="<?= get_permalink(13); ?>" class="btn">
+                        <span>Contact Us</span>
+                    </a>
+
                 </div>
                 <!-- /newsletter -->
 
@@ -229,7 +237,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
 
                 <!-- newsletter -->
                 <div class="newsletter">
-			            <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
+
+                    <a href="<?= get_permalink(13); ?>" class="btn">
+                        <span>Contact Us</span>
+                    </a>
+
                 </div>
                 <!-- /newsletter -->
 
