@@ -238,4 +238,43 @@
     }
   }
 }
+
+.phone-number {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  right: 45px;
+  margin-top: -2px;
+  padding: 8px 12px;
+  letter-spacing: 3px;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 2vh;
+}
+@media only screen and (max-width: $desktop) {
+  .phone-number {
+    right: 4px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .phone-number {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: white;
+    margin: 0;
+    right: 0;
+    top: 92px;
+    padding: 10px 0;
+  }
+}
 /*---------- /get-in-touch ---------*/

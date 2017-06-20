@@ -1,6 +1,7 @@
 <?php
 $logo = get_field('logo_header', 2);
 $social_links = get_field('social_links', 2);
+$number = get_field('call_number', 13);
 $menu_name = 'menu';
 $locations = get_nav_menu_locations();
 if( $locations && isset($locations[ $menu_name ]) ){
@@ -89,7 +90,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
 
                 <!-- newsletter -->
                 <div class="newsletter">
-	                <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
+
+                    <a href="<?= get_permalink(13); ?>" class="btn">
+                        <span><?= get_field('button_contact_title', 2); ?></span>
+                    </a>
+
                 </div>
                 <!-- /newsletter -->
 
@@ -171,7 +180,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
 
                 <!-- newsletter -->
                 <div class="newsletter">
-			            <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
+
+                    <a href="<?= get_permalink(13); ?>" class="btn">
+                        <span><?= get_field('button_contact_title', 2); ?></span>
+                    </a>
+
                 </div>
                 <!-- /newsletter -->
 
@@ -220,7 +237,15 @@ if( $locations && isset($locations[ $menu_name ]) ){
 
                 <!-- newsletter -->
                 <div class="newsletter">
-			            <?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
+
+                    <a href="<?= get_permalink(13); ?>" class="btn">
+                        <span><?= get_field('button_contact_title', 2); ?></span>
+                    </a>
+
                 </div>
                 <!-- /newsletter -->
 
@@ -239,7 +264,6 @@ if( $locations && isset($locations[ $menu_name ]) ){
 			                set_query_var( 'social_image', $value );
 			                get_template_part( '/contents/content', 'social_switch');
 			                echo '</a><!-- /social__item -->';
-
 		                }
 	                }
 	                ?>
@@ -286,6 +310,9 @@ if( $locations && isset($locations[ $menu_name ]) ){
                 </g>
             </svg>
         </a>
+        <div class="phone-number">
+            <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+        </div>
 
     </header>
     <!-- /site__header -->

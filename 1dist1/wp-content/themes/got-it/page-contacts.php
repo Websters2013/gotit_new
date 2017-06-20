@@ -3,7 +3,7 @@
 Template Name: Contacts
 */
 get_header();
-$number = get_field('call_number');
+$number = get_field('call_number', 13);
 $contacts = get_field('contacts', 13);
 $contacts_string = '';
 if (!empty($contacts)) {

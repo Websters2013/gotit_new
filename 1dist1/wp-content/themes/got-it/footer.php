@@ -32,7 +32,7 @@
 
     <!-- newsletter -->
     <div class="newsletter">
-			<?= do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+			<?= do_shortcode('[gravityform id=3 title=false description=false ajax=true]'); ?>
     </div>
     <!-- /newsletter -->
 
