@@ -173,9 +173,9 @@ function favicon(){
 }
 
 
-add_filter( 'gform_submit_button_1', 'button_1', 10, 2 );
+add_filter( 'gform_submit_button_3', 'button_1', 10, 2 );
 function button_1 ( $button, $form ) {
-	return "<button class='btn' id='gform_submit_button_{$form['id']}' title=\"Subscribe\"><span>".get_field('button_email_title', 2)."</span></button>";
+	return "<button type=\"submit\" class='btn' id='gform_submit_button_{$form['id']}'><span>".get_field('button_email_title', 2)."</span></button>";
 }
 add_filter( 'gform_submit_button_2', 'button_2', 10, 2 );
 function button_2 ( $button, $form ) {
