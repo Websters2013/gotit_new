@@ -12,7 +12,7 @@
   .gfield,
   .gform_footer,
   .ginput_container {
-    margin: 0 !important;
+    margin: 0 0 -1px !important;
     padding: 0 !important;
   }
   .gfield_label { display: none !important; }
@@ -29,7 +29,7 @@
     letter-spacing: 3px !important;
     font-size: 12px !important;
     text-align: center;
-    border-bottom: 0 !important;
+    //border-bottom: 0 !important;
     border-radius: 0;
     @include main-font1();
     font-family: "Roboto", sans-serif !important;
@@ -56,9 +56,19 @@
     @include main-font1();
   }
   .gform_footer {
-    display: inline-block;
-    width: 50%;
-    margin: -1px 0 0 !important;
+    width: 50% !important;
+    margin: 0 !important;
+
+    img {
+      display: block;
+      margin: 5px auto;
+    }
+
+  }
+  .gform_fields {
+    >.gfield {
+      margin-bottom: 0 !important;
+    }
   }
   .gform_wrapper div.validation_error {
     border-top: none;
@@ -67,9 +77,16 @@
   .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
     display: none !important;
   }
+  .gform_wrapper li.gfield.gfield_error,
+  .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    border: none !important;
+    background: transparent !important;
+    margin-bottom: 0 !important;
+  }
   .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
   .gform_wrapper li.gfield_error textarea {
-    border-color: #790000 !important;
+    border-color: #C89797 !important;
+    margin-bottom: 0 !important;
   }
   .gform_wrapper li.gfield.gfield_error {
     z-index: 1;
@@ -151,22 +168,30 @@
 @media (min-width: $desktop) {
   .newsletter {
 
+    .gfield,
+    .gform_footer,
+    .ginput_container {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     .gform_fields {
-      @include flexbox();
+      display: -moz-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
       @include flex-direction();
       @include align-items();
       @include justify-content(center);
       @include flex-wrap(wrap);
 
       >#field_3_4 {
-        width: 100%;
+        width: 100% !important;
         margin: -1px 0 0 0 !important;
       }
       >#field_3_3 {
-        width: calc(50% + 1px);
+        width: calc(50% + 1px) !important;
       }
       >.gfield {
-        width: 50%;
+        width: 50% !important;
         margin: 0 0 0 -1px !important;
 
         &:nth-child(2n+1) {
@@ -184,7 +209,9 @@
         //width: 50%;
       }
     }
-
+    .gform_footer {
+      margin: -1px auto 0 !important;
+    }
     input, textarea {
       border: 1px solid #000000 !important;
       //border-right: 0 !important;

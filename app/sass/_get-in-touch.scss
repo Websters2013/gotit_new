@@ -173,8 +173,36 @@
         }
       }
       .newsletter {
+        @include flexbox();
+        @include flex-direction();
+        @include justify-content();
+        @include align-items();
         margin: 0;
+        padding: 0;
         width: 40%;
+        border: 1px solid #000000;
+
+        >.phone-number {
+          @include flexbox();
+          @include flex-direction();
+          @include justify-content(center);
+          @include align-items(center);
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 50%;
+          padding: 12px 12px 8px;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          cursor: default;
+        }
+        >.btn {
+          width: 50%;
+          border: none;
+          padding: 18px 15px;
+          border-left: 1px solid #000000;
+        }
+
       }
     }
 
@@ -240,10 +268,12 @@
 }
 
 .phone-number {
+  opacity: 1;
+  visibility: visible;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 4;
+  z-index: 5;
   right: 45px;
   margin-top: -2px;
   padding: 8px 12px;
@@ -258,6 +288,14 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-size: 2vh;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
 }
 @media only screen and (max-width: $desktop) {
   .phone-number {

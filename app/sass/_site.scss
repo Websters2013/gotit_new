@@ -329,8 +329,36 @@
         }
       }
       .newsletter {
+        @include flexbox();
+        @include flex-direction();
+        @include justify-content();
+        @include align-items();
         margin: 0;
+        padding: 0;
         width: 40%;
+        border: 1px solid #000000;
+
+        >.phone-number {
+          @include flexbox();
+          @include flex-direction();
+          @include justify-content(center);
+          @include align-items(center);
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 50%;
+          padding: 12px 12px 8px;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+          cursor: default;
+        }
+        >.btn {
+          width: 50%;
+          border: none;
+          padding: 18px 15px;
+          border-left: 1px solid #000000;
+        }
+
       }
     }
     &__menu-copyright {
