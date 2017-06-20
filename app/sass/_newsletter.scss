@@ -6,6 +6,9 @@
   margin: 0 auto 54px;
   padding: 0 20px;
 
+  form {
+    text-align: center;
+  }
   .gfield,
   .gform_footer,
   .ginput_container {
@@ -14,13 +17,14 @@
   }
   .gfield_label { display: none !important; }
 
-  input {
+  input, textarea {
+    display: block;
     width: 100% !important;
     height: 50px !important;
     padding: 0 20px !important;
     border: 1px solid #000000 !important;
     color: #000;
-    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: #fff;
     letter-spacing: 3px !important;
     font-size: 12px !important;
@@ -31,6 +35,16 @@
     font-family: "Roboto", sans-serif !important;
     font-weight: 700;
     text-transform: uppercase;
+
+    //&:focus {
+    //  z-index: 1;
+    //  border-color: #b5b4b2 !important;
+    //}
+  }
+  textarea {
+    height: 100px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
   }
 
   .btn {
@@ -41,14 +55,92 @@
     font-weight: 700;
     @include main-font1();
   }
+  .gform_footer {
+    display: inline-block;
+    width: 50%;
+    margin: -1px 0 0 !important;
+  }
+  .gform_wrapper div.validation_error {
+    border-top: none;
+    border-bottom: none;
+  }
+  .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+    display: none !important;
+  }
+  .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  .gform_wrapper li.gfield_error textarea {
+    border-color: #790000 !important;
+  }
+  .gform_wrapper li.gfield.gfield_error {
+    z-index: 1;
+
+    input, textarea {
+      border-color: #790000 !important;
+    }
+
+  }
+  .gform_wrapper .gform_footer input.button,
+  .gform_wrapper .gform_footer button[type=submit] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    min-height: 50px;
+    width: 100%;
+    color: #000000;
+    border: 1px solid #000000 !important;
+    -webkit-transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 18px 28px;
+    position: relative;
+    text-align: center;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(0, 1);
+      transform-origin: right center;
+      background: $main-black-color;
+    }
+
+    &:hover {
+      color: $main-white-color;
+
+      &:before {
+        transform: scale(1, 1);
+        transform-origin: left center;
+      }
+    }
+
+    span {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      z-index: 2;
+    }
+  }
 }
 
 @media (min-width: $tablet-landscape) {
   .newsletter {
     margin-bottom: 57px;
 
-    input {
+    input, textarea {
       height: 57px !important;
+    }
+    textarea {
+      height: 120px !important;
     }
 
     .btn {
@@ -56,22 +148,46 @@
     }
   }
 }
-
 @media (min-width: $desktop) {
   .newsletter {
 
+    .gform_fields {
+      @include flexbox();
+      @include flex-direction();
+      @include align-items();
+      @include justify-content(center);
+      @include flex-wrap(wrap);
+
+      >#field_3_4 {
+        width: 100%;
+        margin: -1px 0 0 0 !important;
+      }
+      >#field_3_3 {
+        width: calc(50% + 1px);
+      }
+      >.gfield {
+        width: 50%;
+        margin: 0 0 0 -1px !important;
+
+        &:nth-child(2n+1) {
+          margin-left: 0 !important;
+        }
+
+      }
+
+    }
     form {
-      display: flex;
+      //display: flex;
       margin-bottom: 87px;
 
       > * {
-        width: 50%;
+        //width: 50%;
       }
     }
 
-    input {
+    input, textarea {
       border: 1px solid #000000 !important;
-      border-right: 0 !important;
+      //border-right: 0 !important;
     }
   }
 }
