@@ -1,6 +1,7 @@
 <?php
 $logo = get_field('logo_header', 2);
 $social_links = get_field('social_links', 2);
+$number = get_field('call_number', 13);
 $menu_name = 'menu';
 $locations = get_nav_menu_locations();
 if( $locations && isset($locations[ $menu_name ]) ){
@@ -88,15 +89,17 @@ if( $locations && isset($locations[ $menu_name ]) ){
                 <p class="site__menu-copyright">© <?= date(Y); ?> | <a href="/" target="_blank" class="link-underline"><?= get_field('copyright', 2); ?></a></p>
 
                 <!-- newsletter -->
-                <form action="<?= get_permalink(13); ?>" method="post" class="newsletter">
+                <div class="newsletter">
 
-                    <input type="email" placeholder="312-265-5420">
+                    <div class="phone-number">
+                        <a href="tel:<?= $number; ?>"><?= $number; ?></a>
+                    </div>
 
-                    <button type="submit" class="btn" title="Contact Us">
+                    <a href="<?= get_permalink(13); ?>" class="btn">
                         <span>Contact Us</span>
-                    </button>
+                    </a>
 
-                </form>
+                </div>
                 <!-- /newsletter -->
 
                 <!-- social -->
@@ -245,7 +248,6 @@ if( $locations && isset($locations[ $menu_name ]) ){
 			                set_query_var( 'social_image', $value );
 			                get_template_part( '/contents/content', 'social_switch');
 			                echo '</a><!-- /social__item -->';
-
 		                }
 	                }
 	                ?>
@@ -293,7 +295,7 @@ if( $locations && isset($locations[ $menu_name ]) ){
             </svg>
         </a>
         <div class="phone-number">
-            <a href="tel:1-312-265-5420">312-265-5420</a>
+            <a href="tel:<?= $number; ?>"><?= $number; ?></a>
         </div>
 
     </header>

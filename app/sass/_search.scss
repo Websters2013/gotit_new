@@ -122,7 +122,7 @@
 
 .search-btn {
   overflow: hidden;
-  display: none;
+  display: block;
   @include absoluteCenterY;
   z-index: 4;
   right: 15px;
@@ -161,6 +161,7 @@
 
   svg {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-100%,0);
   }
 
   &.opened,
