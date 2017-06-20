@@ -565,6 +565,7 @@
             _close = function()  {
 
                 _obj.removeClass( 'opened' );
+                $( '.site__header>.phone-number' ).removeClass( 'hidden' );
 
                 _html.css({
                     'overflow-y': 'auto'
@@ -580,6 +581,7 @@
 
                 _obj.addClass( 'opened' );
                 $( '.search-btn' ).addClass( 'get-in-touch-opened' );
+                $( '.site__header>.phone-number' ).addClass( 'hidden' );
 
                 _html.css({
                     'overflow-y': 'hidden'
