@@ -96,7 +96,7 @@ if( $locations && isset($locations[ $menu_name ]) ){
                     </div>
 
                     <a href="<?= get_permalink(13); ?>" class="btn">
-                        <span>Contact Us</span>
+                        <span><?= get_field('button_contact_title', 2); ?></span>
                     </a>
 
                 </div>
@@ -186,7 +186,7 @@ if( $locations && isset($locations[ $menu_name ]) ){
                     </div>
 
                     <a href="<?= get_permalink(13); ?>" class="btn">
-                        <span>Contact Us</span>
+                        <span><?= get_field('button_contact_title', 2); ?></span>
                     </a>
 
                 </div>
@@ -243,7 +243,7 @@ if( $locations && isset($locations[ $menu_name ]) ){
                     </div>
 
                     <a href="<?= get_permalink(13); ?>" class="btn">
-                        <span>Contact Us</span>
+                        <span><?= get_field('button_contact_title', 2); ?></span>
                     </a>
 
                 </div>

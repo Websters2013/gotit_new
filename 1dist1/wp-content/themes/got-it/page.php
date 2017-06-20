@@ -90,9 +90,12 @@ $project = get_posts(array(
 	'post_status' => 'publish'
 ));
 $project_string = '';
+$count = 1;
+$count_project = count($project);
 if(!empty($project)) {
 	$project_string = '<!-- case-preview__wrap --><div class="case-preview__wrap">';
     foreach ($project as $row) {
+
 	    $project_string .= '<!-- case-preview__item -->
 				<span class="case-preview__item">
                         <span class="case-preview__info">
@@ -101,6 +104,11 @@ if(!empty($project)) {
 					<img src="'.get_the_post_thumbnail_url($row).'" alt="'.get_the_title($row).'">
 				</span>
 				<!-- /case-preview__item -->';
+
+	    if (($count % 3 === 0) && ($count + 1 !== $count_project)) {
+		    $project_string .= '</div><!-- /case-preview__wrap --><!-- case-preview__wrap --><div class="case-preview__wrap">';
+	    }
+	    $count++;
     }
 	$project_string .= '</div><!-- /case-preview__wrap -->';
 }
