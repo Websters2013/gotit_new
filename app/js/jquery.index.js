@@ -37,7 +37,39 @@
             new GetInTouch( $(this) );
         } );
 
+        $('.anchor').each( function() {
+            new Anchor( $(this) );
+        } );
+
     });
+
+    var Anchor = function ( obj ) {
+        var _obj = obj,
+            _header = $( '.site__header'),
+            _window = $( 'html, body' );
+
+        var _onEvents = function() {
+
+                _obj.on( {
+                    click: function() {
+
+                        _header.addClass( 'site__header_minimize' );
+
+                        _window.animate( {
+                            scrollTop: $( $.attr(this, 'href') ).offset().top - 140
+                        }, 600);
+
+                        return false;
+                    }
+                } );
+
+            },
+            _construct = function() {
+                _onEvents();
+            };
+
+        _construct()
+    };
 
     var Hero = function (obj) {
 

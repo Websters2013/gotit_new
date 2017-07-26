@@ -44,6 +44,7 @@
     background: #fff;
 
     img {
+      display: block;
       position: absolute;
       top: 50%;
       right: 0;
@@ -65,7 +66,8 @@
     position: relative;
     width: 80%;
     max-width: 335px;
-    padding: 30px 70px 30px 40px;
+    padding: 30px 40px 30px 40px;
+    white-space: nowrap;
     margin: 0 auto;
     z-index: 1;
     font-size: 11px;
@@ -94,8 +96,8 @@
 
     &:after {
       position: absolute;
-      top: calc(50% - 4px);
-      right: 50px;
+      top: calc(50% - 5px);
+      right: 30px;
       width: 0;
       height: 0;
       border-style: solid;
@@ -103,6 +105,8 @@
       border-color: transparent transparent transparent #000000;
       -webkit-transition: border 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
       content: '';
     }
 
@@ -115,7 +119,6 @@
       }
 
       &:after {
-        transform: translate(6px, 0);
         border-color: transparent transparent transparent #fff;
       }
     }
@@ -127,7 +130,7 @@
 
       span {
         display: block;
-        margin-bottom: 6px;
+        //margin-bottom: 6px;
         font-size: 24px;
         line-height: 28px;
         letter-spacing: 1px;
@@ -181,8 +184,14 @@
       top: 78.5vh;
       left: 12.3%;
       z-index: 3;
+      padding: 30px 70px 30px 40px;
       border: none;
       transform: translate(-100vw, 0%);
+
+      &:after{
+        right: 50px;
+      }
+
     }
 
     &.is-inview .hero__ban img {

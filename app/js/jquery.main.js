@@ -57,31 +57,9 @@
                     'scroll': function () {
 
                         _action = _window.scrollTop() >= _header.innerHeight();
+                        _checkScroll();
 
-                    },
-                    'DOMMouseScroll': function ( e ) {
-                        var delta = e.originalEvent.detail;
-                        if ( delta ) {
-                            var direction = ( delta > 0 ) ? 1 : -1;
-                            _checkScroll( direction );
-                        }
-                    },
-                    'mousewheel': function ( e ) {
-                        var delta = e.originalEvent.wheelDelta;
-                        if ( delta ) {
-                            var direction = ( delta > 0 ) ? -1 : 1;
-                            _checkScroll( direction );
-                        }
-                    },
-                    'touchmove': function ( e ) {
-                        var currentPos = e.originalEvent.touches[0].clientY;
-                        if ( currentPos > _lastPos ) {
-                            _checkScroll( -1 );
-                        } else if ( currentPos < _lastPos ) {
-                            _checkScroll( 1 );
-                        }
-                        _lastPos = currentPos;
-                    },
+                    }
                 } );
             },
             _checkScroll = function( direction ){
@@ -92,12 +70,6 @@
                     _header.removeClass( 'site__header_minimize' );
                 }
 
-                if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ) {
-                    _header.addClass( 'site__header_hidden' );
-                }
-                if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ) {
-                    _header.removeClass( 'site__header_hidden' );
-                }
             },
             _openMenu = function( elem )  {
 

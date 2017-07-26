@@ -270,15 +270,14 @@
 .phone-number {
   opacity: 1;
   visibility: visible;
-  position: absolute;
   top: 50%;
-  transform: translateY(-50%) translateZ(0);
   z-index: 5;
   right: 5px;
   margin-top: -2px;
   padding: 8px 12px;
   letter-spacing: 3px;
   border: none;
+  color: #000;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -299,14 +298,16 @@
 }
 @media (min-width: $tablet-landscape) {
   .phone-number {
+    position: absolute;
     padding: 17px 31px 18px;
     border: 1px solid #000;
+    transform: translateY(-50%) translateZ(0);
   }
 }
 @media (min-width: $desktop) {
   .phone-number {
     top: 50%;
-    right: 4px;
+    right: 65px;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -315,15 +316,24 @@
     width: 100%;
     float: left;
     text-align: center;
-    color: white;
+    color: #000;
     margin: 0;
     right: 0;
     top: 125px;
     padding: 10px 0;
   }
 }
+
+@media (min-width: 1200px) and (max-width: 1500px) and (min-height: 480px) {
+  .phone-number {
+    right: 40px;
+    padding: 14px 7px 15px;
+    font-size: 14px;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1500px) and (min-height: 600px) {
   .phone-number {
+    right: 65px;
     padding: 14px 15px 15px;
     font-size: 14px;
   }
