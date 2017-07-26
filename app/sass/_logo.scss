@@ -2,11 +2,12 @@
 .logo {
   overflow: hidden;
   position: relative;
-  display: inline-block;
+  display: block;
   top: 0;
   left: 0;
   height: 104px;
   width: 111px;
+  margin: 0 auto;
   z-index: 5;
   pointer-events: auto;
   transition: width 0.9s 0.2s cubic-bezier(0.4, 0, 0.2, 1);

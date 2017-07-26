@@ -272,9 +272,9 @@
   visibility: visible;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(0);
   z-index: 5;
-  right: 45px;
+  right: 5px;
   margin-top: -2px;
   padding: 8px 12px;
   letter-spacing: 3px;
@@ -297,8 +297,15 @@
   }
 
 }
-@media only screen and (max-width: $desktop) {
+@media (min-width: $tablet-landscape) {
   .phone-number {
+    padding: 17px 31px 18px;
+    border: 1px solid #000;
+  }
+}
+@media (min-width: $desktop) {
+  .phone-number {
+    top: 50%;
     right: 4px;
   }
 }
@@ -313,6 +320,12 @@
     right: 0;
     top: 125px;
     padding: 10px 0;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1500px) and (min-height: 600px) {
+  .phone-number {
+    padding: 14px 15px 15px;
+    font-size: 14px;
   }
 }
 /*---------- /get-in-touch ---------*/
