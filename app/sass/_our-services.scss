@@ -1,5 +1,5 @@
-
 .our-services {
+  padding-top: 100px;
   color: #2d3244;
 
   &__hero {
@@ -88,6 +88,7 @@
 @media (min-width: $tablet-portrait) {
 
   .our-services {
+    padding-top: 0;
 
     .navigation-controls {
       right: 15px;

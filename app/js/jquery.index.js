@@ -264,6 +264,7 @@
                             break;
                     }
                 } );
+
                 $( '.hero__ban' ).css( {
                     '-webkit-transform': 'translate( 0px, ' + ( scrollTop * .1) + 'px )',
                     'transform': 'translate( 0px, ' + ( scrollTop * .1) + 'px )'
