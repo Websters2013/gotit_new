@@ -29,6 +29,7 @@
     height: 100%;
     background-color: #73c8cf;
     color: #fff;
+    @include main-font1();
     font-weight: 600;
     font-size: 14vh;
     z-index: 101;
