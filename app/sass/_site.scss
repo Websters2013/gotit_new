@@ -17,6 +17,45 @@
   color: #000;
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
+  &__intro{
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding: 50px 50% 50px 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #73c8cf;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14vh;
+    z-index: 101;
+    pointer-events: none;
+    text-align: left;
+    -webkit-transition: visibility .5s ease, opacity .5s ease;
+    transition: visibility .5s ease, opacity .5s ease;
+
+    .tlt{
+      visibility: hidden;
+      -webkit-transition: visibility .3s ease;
+      transition: visibility .3s ease;
+    }
+
+    span{
+      visibility: hidden;
+      -webkit-transition: visibility .3s ease;
+      transition: visibility .3s ease;
+    }
+
+    &.hide{
+      visibility: hidden;
+      opacity: 0;
+    }
+
+  }
+
   p {
     line-height: 1.6;
   }
@@ -348,6 +387,7 @@
   &__menu-footer {
     display: none;
   }
+
 }
 
 @media (min-width: $phone-landscape) {

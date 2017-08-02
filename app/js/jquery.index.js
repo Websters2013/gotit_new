@@ -13,6 +13,10 @@
             }
         } );
 
+        $('.site__intro').each( function() {
+            new Intro( $(this) );
+        } );
+
         $('.hero').each( function() {
             new Hero( $(this) );
         } );
@@ -69,6 +73,52 @@
             };
 
         _construct()
+    };
+
+    var Intro = function ( obj ) {
+        var _obj = obj,
+            _firstTime = true,
+            _words = _obj.find( '.tlt' );
+
+        var _onEvents = function() {
+
+            },
+            _typeText = function () {
+
+                _firstTime = localStorage.getItem( 'firstTime' );
+
+                if ( !_firstTime ) {
+                    _obj.remove();
+                    return false;
+                }
+
+                _obj.find( '.tlt' ).textillate( {
+                    initialDelay: 200,
+                    in: {
+                        effect: 'fadeIn',
+                        delay: 80
+                    },
+                    callback: function () {
+                        _obj.addClass( 'hide' );
+
+                        localStorage.setItem( 'firstTime', 'false' );
+
+                        setTimeOut( function () {
+
+                            _obj.remove();
+
+                        }, 1000 );
+                        
+                    }
+                } );
+
+            },
+            _construct = function() {
+                _typeText();
+                _onEvents();
+            };
+
+        _construct();
     };
 
     var Hero = function (obj) {

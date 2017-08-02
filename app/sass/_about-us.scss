@@ -250,7 +250,7 @@
     &-thumb {
       display: block;
       height: 288px;
-      margin-bottom: -30px;
+      margin-bottom: 10px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -263,22 +263,18 @@
 
       dt {
         margin-bottom: 6px;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 600;
-        line-height: 1.25;
+        line-height: 1;
         letter-spacing: 5px;
-
-        span {
-          display: block;
-        }
       }
 
       dd {
         font-weight: 600;
-        line-height: 1.88;
+        line-height: 1.55;
         letter-spacing: 5px;
         color: #000000;
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }
