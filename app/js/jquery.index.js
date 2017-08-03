@@ -107,7 +107,9 @@
                         _showLetter();
                     } else {
 
-                        _hideIntro();
+                        setTimeout( function () {
+                            _hideIntro();
+                        }, 2500  )
 
                     }
                 } else {

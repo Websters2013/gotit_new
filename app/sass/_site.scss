@@ -24,14 +24,14 @@
     align-items: center;
     top: 0;
     left: 0;
-    padding: 50px 50px 50px 50px;
+    padding: 25px;
     width: 100%;
     height: 100%;
     background-color: #73c8cf;
     color: #fff;
     @include main-font1();
     font-weight: 600;
-    font-size: 11vh;
+    font-size: 4vh;
     z-index: 101;
     pointer-events: none;
     text-align: left;
@@ -383,10 +383,19 @@
 @media (min-width: $phone-landscape) {
   .site {
 
+    &__intro {
+      padding: 50px;
+      font-size: 11vh;
+    }
+
   }
 }
 @media (min-width: $tablet-portrait) {
   .site {
+
+    &__intro {
+      font-size: 7vh;
+    }
 
     &__footer{
 
@@ -506,6 +515,14 @@
       text-align: center;
       text-transform: uppercase;
       color: #4a4a4a;
+    }
+  }
+}
+
+@media (min-width: $tablet-landscape) {
+  .site {
+    &__intro {
+      font-size: 11vh;
     }
   }
 }
