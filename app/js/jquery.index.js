@@ -95,7 +95,7 @@
 
                         _obj.addClass( 'hide' );
 
-                        setTimeOut( function () {
+                        setTimeout( function () {
                             _obj.remove();
                         }, 1000 );
 

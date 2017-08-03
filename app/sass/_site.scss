@@ -76,10 +76,11 @@
     text-align: center;
     pointer-events: none;
     transition: padding .4s cubic-bezier(0.4, 0, 0.2, 1),
-      transform .4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform .4s cubic-bezier(0.4, 0, 0.2, 1), background-color .3s ease;
 
     &_minimize{
       padding: 0!important;
+      background-color: transparent;
     }
 
     &_hidden{
