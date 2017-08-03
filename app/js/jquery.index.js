@@ -77,34 +77,83 @@
 
     var Intro = function ( obj ) {
         var _obj = obj,
-            _words = _obj.find( '.tlt' );
+            _words = _obj.find( '.typistText' ),
+            _texts = JSON.parse( _words.attr( 'data-texts' ) ),
+            _letterInterval = _words.attr( 'data-letterInterval' ),
+            _textInterval = _words.attr( 'data-textInterval' ),
+            _startTime = -1,
+            _textCounter = 0,
+            _symbolCounter = 0,
+            _canShowSymbol = true;
 
         var _onEvents = function() {
 
             },
-            _typeText = function () {
+            _typeText = function ( time ) {
 
-                _obj.find( '.tlt' ).textillate( {
-                    initialDelay: 200,
-                    type: 'char',
-                    in: {
-                        effect: 'fadeIn',
-                        delay: 80
-                    },
-                    callback: function () {
+                var progress;
 
-                        _obj.addClass( 'hide' );
+                if (_startTime < 0) {
+                    _startTime = time;
+                }
 
-                        setTimeout( function () {
-                            _obj.remove();
-                        }, 1000 );
+                progress = ( time - _startTime ) / _letterInterval;
+
+                if (progress > 1) {
+                    progress = 1;
+                    _startTime = time;
+
+                    if (_canShowSymbol) {
+                        _showLetter();
+                    } else {
+
+                        _hideIntro();
 
                     }
-                } );
+                } else {
+                    requestAnimationFrame( _typeText );
+                }
+
+            },
+            _showLetter = function () {
+
+                var tmp = _texts[_textCounter];
+
+                _obj.text(_obj.text() + tmp.substr(_symbolCounter, 1));
+
+                if (_symbolCounter < tmp.length) {
+
+                    _symbolCounter++;
+                    requestAnimationFrame( _typeText );
+
+                } else {
+
+                    setTimeout(function () {
+                        _canShowSymbol = false;
+                        _symbolCounter = 0;
+                        if (_textCounter < ( _texts.length - 1 )) {
+                            _textCounter++;
+                        } else {
+                            _textCounter = 0;
+                        }
+                        requestAnimationFrame( _typeText );
+                    }, 1000);
+
+                }
+
+            },
+            _hideIntro = function () {
+
+                _obj.addClass( 'hide' );
+
+                setTimeout( function () {
+                    _obj.remove();
+                }, 500 );
 
             },
             _construct = function() {
-                _typeText();
+                _obj.addClass( 'initialized' );
+                _typeText( 0 );
                 _onEvents();
             };
 
