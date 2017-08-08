@@ -127,7 +127,7 @@
         }
       }
       &:first-child,
-      &:nth-child(5n){
+      &:nth-child(5n), &:nth-child(7n){
         justify-content: flex-end;
         padding-left: 50px;
         padding-right: 50px;
@@ -305,7 +305,8 @@
     &__item {
 
       &:first-child,
-      &:nth-child(5n){
+      &:nth-child(5n),
+      &:nth-child(7n){
         padding-left: 150px;
         padding-right: 150px;
 
@@ -313,14 +314,17 @@
           padding: 94px 31px 4px 89px;
         }
       }
+
       &:nth-child(2n),
       &:nth-child(6n) {
         padding-right: 150px;
       }
+
       &:nth-child(3) {
         padding-left: 150px;
         padding-right: 150px;
       }
+
       &:nth-child(4n) {
         padding-left: 150px;
       }
